@@ -47,12 +47,40 @@
         -->
         <div class="projects-cards" id="projects-grid" role="list"></div>
 
-        <!-- Optional: graceful fallback if JS is blocked -->
-        <noscript>
-          <p class="section-intro" style="margin-top: 1rem;">
-            JavaScript is disabled. This page requires JavaScript to render the project cards.
-          </p>
-        </noscript>
+        <!-- Progressive enhancement fallback -->
+         <noscript>
+          <ol class="timeline-fallback" style="margin-top: 1rem;">
+            <li><strong>Dissertation:</strong> Dream Simulation &amp; Supernatural Agent Cognition (active)</li>
+            <li><strong>Article cluster:</strong> The Legend of Zelda &amp; Religion (ongoing)</li>
+            <li><strong>Institute development:</strong> Waypoint Institute Initiative (planning)</li>
+          </ol>
+         </noscript>
+       </section>
+
+       <section class="section-card" aria-labelledby="timeline-title">
+         <h2 id="timeline-title">Layered timeline</h2>
+         <p class="muted">Track overlapping work across scholarship and teaching. Use the filters to focus by domain.</p>
+
+         <div class="timeline-controls" role="group" aria-label="Timeline controls">
+           <button type="button" class="chip" data-track="all" aria-pressed="true">All</button>
+           <button type="button" class="chip" data-track="scholarship" aria-pressed="false">Scholarship</button>
+           <button type="button" class="chip" data-track="teaching" aria-pressed="false">Teaching</button>
+         </div>
+
+         <ol id="timeline-fallback" class="timeline-fallback">
+           <li><strong>Scholarship</strong> — PhD Candidate (ABD) <span class="muted">(2021–present)</span></li>
+           <li><strong>Teaching</strong> — Adjunct and secondary teaching <span class="muted">(2020–present)</span></li>
+         </ol>
+
+         <div id="timeline-grid" class="timeline-grid" hidden></div>
+
+         <aside id="timeline-drawer" class="drawer" aria-hidden="true">
+           <div class="drawer-header">
+             <h3 id="drawer-title">Details</h3>
+             <button type="button" id="drawer-close" aria-label="Close details">×</button>
+           </div>
+           <div id="drawer-body" class="drawer-body"></div>
+         </aside>
       </section>
     </main>
 
@@ -70,6 +98,5 @@
   <script defer src="./js/data/data.js?v=20240607"></script>
   <script defer src="./js/projects-module.js?v=20240607"></script>
   <script defer src="./js/nav.js?v=20260326"></script>
-  <script defer src="./js/projects.js?v=20240607"></script>
-</body>
+  <script defer src="./js/projects.js?v=20240607"></script>   <script defer src="./js/timeline.js?v=20260410"></script></body>
 </html>

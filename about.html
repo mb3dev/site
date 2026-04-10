@@ -1,4 +1,62 @@
-<section id="dissertation">
-  <h2>Dissertation</h2>
-  <p>This dissertation examines whether sensorimotor information in dream content predicts religiosity and paranormal belief.</p>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Michael C. Barros</title>
+  <meta name="description" content="Research profile, dissertation overview, and CV for Michael C. Barros." />
+  <link rel="stylesheet" href="./style.css?v=20260410" />
+</head>
+<body class="page page--about">
+  <div class="shell">
+    <header class="site-header" aria-label="Site">
+      <a class="brand" href="./index.html">Michael C. Barros</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="./about.html" aria-current="page">About</a>
+        <a class="nav__link" href="./books.html">Books</a>
+        <a class="nav__link" id="nav-blog" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog</a>
+        <a class="nav__link" href="./projects.html">Projects</a>
+        <a class="nav__link" id="nav-research" href="#" target="_blank" rel="noopener">Research</a>
+        <a class="nav__link" href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <span class="eyebrow">About</span>
+        <h1 class="page-title">Research profile</h1>
+        <p class="page-kicker">I study religious experience as lived practice, cultural form, and cognitive phenomenon, with a focus on dreams, ritual, and symbolic media.</p>
+        <div class="cta-row">
+          <a class="btn" href="./assets/docs/michael-c-barros-cv.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+          <a class="btn ghost" id="about-research" href="#" target="_blank" rel="noopener">Research profile</a>
+          <a class="btn ghost" id="about-blog" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Writing</a>
+        </div>
+      </section>
+
+      <section id="dissertation" class="section-card">
+        <h2>Dissertation</h2>
+        <p>This dissertation examines whether simulation richness in dream content predicts religiosity and paranormal belief. Using a grounded cognition framework and longitudinal dream data, it models dreaming as a high-intensity simulation process and tests how variation in simulated experience relates to belief orientation.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-tagline">Religion · Media · Imagination</p>
+      <nav class="footer-links" aria-label="Secondary">
+        <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Substack</a>
+        <a href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://national.academia.edu/MichaelBarros" target="_blank" rel="noopener">Academia.edu</a>
+      </nav>
+      © <span id="year"></span> Michael C. Barros
+    </footer>
+  </div>
+
+  <script defer src="./js/data/data.js?v=20260410"></script>
+  <script defer src="./js/nav.js?v=20260326"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

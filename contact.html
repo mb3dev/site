@@ -43,9 +43,9 @@
       <section class="contact-grid">
         <article class="section-card">
           <h2>Email</h2>
-          <p class="muted">Share a brief introduction and how I can help.</p>
+          <p class="muted">Share who you are, what you need (collaboration, teaching, editorial), and your timeframe.</p>
           <div class="contact-actions">
-            <code id="addr">hello@example.com</code>
+            <code id="addr">barrostheology@gmail.com</code>
             <button id="copy" class="btn ghost" type="button">Copy</button>
             <a id="mailto" class="btn" href="#">Compose email</a>
           </div>
@@ -70,8 +70,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       const LINKS = (window.SITE_DATA && window.SITE_DATA.links) || window.LINKS || {};
       const EMAIL = (window.SITE_DATA && window.SITE_DATA.contact && window.SITE_DATA.contact.email) || 'barrostheology@gmail.com';
-      const PLACEHOLDER = 'hello@example.com';
-
       const blog = document.getElementById('nav-blog');
       if (blog) blog.href = LINKS.blog || 'https://mythonoesis.substack.com/';
       const research = document.getElementById('nav-research');
@@ -81,7 +79,7 @@
       if (mailto) mailto.href = `mailto:${EMAIL}`;
 
       const addr = document.getElementById('addr');
-      if (addr) addr.textContent = PLACEHOLDER;
+      if (addr) addr.textContent = EMAIL;
 
       const copy = document.getElementById('copy');
       if (copy) {
