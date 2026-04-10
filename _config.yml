@@ -1,8 +1,8 @@
 # _config.yml at the published root
 title: "Michael C. Barros"
 description: "Where myth and meaning surface in games, film, and fiction."
-url: "https://michaelcbarros.github.io"
-baseurl: "/michaelcbarros"   # for a project site; if you switch to user site, set "".
+url: "https://michaelcbarros.com"
+baseurl: ""   # empty for custom domain
 
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default"
