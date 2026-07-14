@@ -2,101 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Michael C. Barros</title>
-  <meta name="description" content="Waypoint Institute, The Legend of Zelda &amp; Religion, and an ABD dissertation on dream-based supernatural agents." />
-  <link rel="stylesheet" href="./style.css?v=20260410" />
+  <meta name="description" content="Research and active projects: the dissertation on dreams and religious cognition, two books in progress, and Waypoint Institute." />
+  <meta name="theme-color" content="#faf8f2" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./style.css?v=20260714" />
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<body class="page page--projects">
-  <div class="shell">
-    <header class="site-header" aria-label="Site">
-      <a class="brand" href="./index.html">Michael C. Barros</a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav__link" href="./about.html">About</a>
-        <a class="nav__link" href="./books.html">Books</a>
-        <a class="nav__link" id="nav-blog" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog</a>
-        <a class="nav__link" href="./projects.html" aria-current="page">Projects</a>
-        <a class="nav__link" id="nav-research" href="#" target="_blank" rel="noopener">Research</a>
-        <a class="nav__link" href="./contact.html">Contact</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./index.html">Michael C.&nbsp;Barros</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="./about.html">About</a>
+        <a href="./books.html">Publications</a>
+        <a href="./projects.html" aria-current="page">Projects</a>
+        <a href="./timeline.html">Timeline</a>
+        <a href="./reading-list.html">Reading List</a>
+        <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog<span class="ext">↗</span></a>
+        <a href="./contact.html">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="main">
-      <section class="page-header" aria-labelledby="page-title">
+  <main id="main">
+
+    <section class="page-head" aria-labelledby="projects-title">
+      <div class="wrap">
         <span class="eyebrow">Projects</span>
-        <h1 class="page-title" id="page-title">Research &amp; works in progress</h1>
-        <div class="projects-toprow">
-          <p class="page-kicker">Select a field, then open a project for details.</p>
-          <div class="projects-controls" aria-label="Project filters">
-            <div class="pillbar" role="tablist" aria-label="Filter projects by field">
-              <button class="pill pill--active" type="button" role="tab" aria-selected="true" data-field="all">All</button>
-              <button class="pill" type="button" role="tab" aria-selected="false" data-field="religion-culture">Religion &amp; Culture</button>
-              <button class="pill" type="button" role="tab" aria-selected="false" data-field="csr">Cognitive Science of Religion</button>
-            </div>
-          </div>
+        <h1 id="projects-title">Research &amp; active projects</h1>
+        <div class="filter-bar" role="group" aria-label="Filter projects by field">
+          <button class="chip" type="button" aria-pressed="true" data-filter="all">All</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="dissertation">Dissertation</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="media-religion">Media &amp; Religion</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="csr">Cognitive Science of Religion</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="education">Education</button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="projects-section" aria-labelledby="projects-heading">
+    <section aria-label="Project list">
+      <div class="wrap">
 
-        <!--
-          NOTE:
-          This grid is intentionally populated by ./js/projects.js from ./js/data/data.js.
-          Do not hardcode cards here; doing so will create duplicates and break the accordion behavior.
-        -->
-        <div class="projects-cards" id="projects-grid" role="list"></div>
+        <article class="project reveal" id="dissertation" data-fields="dissertation csr">
+          <div class="project__head">
+            <h2>Dissertation: Sensorimotor Content in Dreams and Waking Religious Cognition</h2>
+            <span class="status status--active">Active</span>
+          </div>
+          <p class="org">National University · Chair: Dr. Patrick McNamara</p>
+          <p class="desc">Examines whether simulation richness in dream content predicts religiosity and paranormal belief. Uses a grounded cognition framework — modeling dreaming as a high-intensity simulation process — and longitudinal dream data to test how variation in simulated experience relates to supernatural agent concepts and belief orientation.</p>
+          <p class="current"><strong>Current:</strong> data analysis &amp; chapter drafting</p>
+          <div class="tags">
+            <span>Grounded Cognition</span>
+            <span>Dreams</span>
+            <span>Supernatural Agents</span>
+            <span>Religiosity</span>
+          </div>
+        </article>
 
-        <!-- Progressive enhancement fallback -->
-         <noscript>
-          <ol class="timeline-fallback" style="margin-top: 1rem;">
-            <li><strong>Dissertation:</strong> Dream Simulation &amp; Supernatural Agent Cognition (active)</li>
-            <li><strong>Article cluster:</strong> The Legend of Zelda &amp; Religion (ongoing)</li>
-            <li><strong>Institute development:</strong> Waypoint Institute Initiative (planning)</li>
-          </ol>
-         </noscript>
-       </section>
+        <article class="project reveal" id="zelda-religion" data-fields="media-religion">
+          <div class="project__head">
+            <h2>The Legend of Zelda &amp; Religion</h2>
+            <span class="status status--active">Active</span>
+          </div>
+          <p class="org">Bloomsbury Academic · with Talbot Hook · due June 2026</p>
+          <p class="desc">An edited scholarly volume exploring how religion and the sacred emerge from within the structure and narrative of <em>The Legend of Zelda</em> series. Rather than mapping Zelda onto existing traditions, the volume investigates how religious meaning arises internally — through gameplay mechanics, symbolism, spatial design, and narrative. Timed to coincide with the Zelda film debut in March 2027.</p>
+          <p class="current"><strong>Current:</strong> second drafts</p>
+          <div class="tags">
+            <span>Zelda</span>
+            <span>Media Studies</span>
+            <span>Myth</span>
+            <span>Sacred Space</span>
+          </div>
+        </article>
 
-       <section class="section-card" aria-labelledby="timeline-title">
-         <h2 id="timeline-title">Layered timeline</h2>
-         <p class="muted">Track overlapping work across scholarship and teaching. Use the filters to focus by domain.</p>
+        <article class="project reveal" id="omega-point" data-fields="media-religion">
+          <div class="project__head">
+            <h2>Philip K. Dick's Omega Point: Pierre Teilhard de Chardin's Eschatology Reimagined</h2>
+            <span class="status status--active">Active</span>
+          </div>
+          <p class="org">Anti-Oedipus Press · Exegetics: PKD Studies</p>
+          <p class="desc">A monograph examining Philip K. Dick's engagement with Pierre Teilhard de Chardin's theology — particularly the concept of the Omega Point — drawing primarily from Dick's <em>Exegesis</em>. The volume maps the extent of Dick's reading of Chardin and investigates how he makes use of and expands Chardin's eschatological framework.</p>
+          <p class="current"><strong>Current:</strong> initial research</p>
+          <div class="tags">
+            <span>PKD</span>
+            <span>Teilhard de Chardin</span>
+            <span>Eschatology</span>
+            <span>Exegesis</span>
+          </div>
+        </article>
 
-         <div class="timeline-controls" role="group" aria-label="Timeline controls">
-           <button type="button" class="chip" data-track="all" aria-pressed="true">All</button>
-           <button type="button" class="chip" data-track="scholarship" aria-pressed="false">Scholarship</button>
-           <button type="button" class="chip" data-track="teaching" aria-pressed="false">Teaching</button>
-         </div>
+        <article class="project reveal" id="waypoint" data-fields="education">
+          <div class="project__head">
+            <h2><a href="https://waypoint.institute" target="_blank" rel="noopener">Waypoint Institute</a></h2>
+            <span class="status status--active">Active</span>
+          </div>
+          <p class="org">waypoint.institute</p>
+          <p class="desc">A tuition-free Christian college education pursuing the Good, the True, and the Beautiful. Waypoint Institute offers a supporter-funded college pathway in Scripture, doctrine, culture, and mission — delivered through self-paced modules, guided checkpoints, and oral capstone examinations. Designed to make serious theological formation accessible without cost barriers.</p>
+          <p class="current"><strong>Current:</strong> pre-launch testing</p>
+          <div class="tags">
+            <span>Christian Education</span>
+            <span>Tuition-Free</span>
+            <span>Formation</span>
+          </div>
+        </article>
 
-         <ol id="timeline-fallback" class="timeline-fallback">
-           <li><strong>Scholarship</strong> — PhD Candidate (ABD) <span class="muted">(2021–present)</span></li>
-           <li><strong>Teaching</strong> — Adjunct and secondary teaching <span class="muted">(2020–present)</span></li>
-         </ol>
+      </div>
+    </section>
 
-         <div id="timeline-grid" class="timeline-grid" hidden></div>
+  </main>
 
-         <aside id="timeline-drawer" class="drawer" aria-hidden="true">
-           <div class="drawer-header">
-             <h3 id="drawer-title">Details</h3>
-             <button type="button" id="drawer-close" aria-label="Close details">×</button>
-           </div>
-           <div id="drawer-body" class="drawer-body"></div>
-         </aside>
-      </section>
-    </main>
-
-    <footer>
-      <p class="footer-tagline">Essays · Research · Projects</p>
-      <nav class="footer-links" aria-label="Secondary">
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="name">Michael C. Barros</p>
+      <p class="tag">Essays · Research · Projects</p>
+      <nav class="footer-links" aria-label="Profiles">
         <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Substack</a>
         <a href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
         <a href="https://national.academia.edu/MichaelBarros" target="_blank" rel="noopener">Academia.edu</a>
+        <a href="https://www.linkedin.com/in/michaelbarros22" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
-      © <span id="year"></span> Michael C. Barros
-    </footer>
-  </div>
+      <p class="fine">© <span id="year"></span> Michael C. Barros</p>
+    </div>
+  </footer>
 
-  <script defer src="./js/data/data.js?v=20240607"></script>
-  <script defer src="./js/projects-module.js?v=20240607"></script>
-  <script defer src="./js/nav.js?v=20260326"></script>
-  <script defer src="./js/projects.js?v=20240607"></script>   <script defer src="./js/timeline.js?v=20260410"></script></body>
+  <script defer src="./js/site.js?v=20260714"></script>
+  <script>
+    // Field filters
+    document.addEventListener('DOMContentLoaded', () => {
+      const chips = document.querySelectorAll('.chip[data-filter]');
+      const projects = document.querySelectorAll('.project[data-fields]');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          chips.forEach((c) => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+          const f = chip.getAttribute('data-filter');
+          projects.forEach((p) => {
+            const show = f === 'all' || p.getAttribute('data-fields').split(' ').includes(f);
+            p.classList.toggle('is-hidden', !show);
+          });
+        });
+      });
+    });
+  </script>
+</body>
 </html>
