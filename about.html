@@ -2,61 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Michael C. Barros</title>
-  <meta name="description" content="Research profile, dissertation overview, and CV for Michael C. Barros." />
-  <link rel="stylesheet" href="./style.css?v=20260410" />
+  <meta name="description" content="Michael C. Barros — scholar of religion and cognition, instructor, and editor. Current roles, education, and certifications." />
+  <meta name="theme-color" content="#faf8f2" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./style.css?v=20260714" />
+  <style>
+    .about-grid {
+      display: grid;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+    @media (min-width: 860px) {
+      .about-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 320px); }
+    }
+    .about-photo img {
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(33,29,22,.14), 0 16px 40px -12px rgba(33,29,22,.3);
+    }
+    .about-photo figcaption {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+  </style>
 </head>
-<body class="page page--about">
-  <div class="shell">
-    <header class="site-header" aria-label="Site">
-      <a class="brand" href="./index.html">Michael C. Barros</a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav__link" href="./about.html" aria-current="page">About</a>
-        <a class="nav__link" href="./books.html">Books</a>
-        <a class="nav__link" id="nav-blog" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog</a>
-        <a class="nav__link" href="./projects.html">Projects</a>
-        <a class="nav__link" id="nav-research" href="#" target="_blank" rel="noopener">Research</a>
-        <a class="nav__link" href="./contact.html">Contact</a>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./index.html">Michael C.&nbsp;Barros</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="./about.html" aria-current="page">About</a>
+        <a href="./books.html">Publications</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./timeline.html">Timeline</a>
+        <a href="./reading-list.html">Reading List</a>
+        <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog<span class="ext">↗</span></a>
+        <a href="./contact.html">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="page-header">
-        <span class="eyebrow">About</span>
-        <h1 class="page-title">Research profile</h1>
-        <p class="page-kicker">I study religious experience as lived practice, cultural form, and cognitive phenomenon, with a focus on dreams, ritual, and symbolic media.</p>
-        <div class="cta-row">
-          <a class="btn" href="./assets/docs/michael-c-barros-cv.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
-          <a class="btn ghost" id="about-research" href="#" target="_blank" rel="noopener">Research profile</a>
-          <a class="btn ghost" id="about-blog" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Writing</a>
+  <main id="main">
+
+    <section class="page-head" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="about-grid">
+          <div>
+            <span class="eyebrow">About</span>
+            <h1 id="about-title">Michael C. Barros</h1>
+            <p class="lede">I'm interested in religion and religious experience — how it's generated, how it's expressed, and what it means.</p>
+            <p style="margin-top:0.6rem">My work integrates research, teaching, and applied systems experience across academic and non-academic settings.</p>
+            <div class="cta-row" style="margin-top:1.8rem">
+              <a class="btn btn--small" href="./books.html">Publications</a>
+              <a class="btn btn--small btn--ghost" href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog</a>
+              <a class="btn btn--small btn--ghost" href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
+              <a class="btn btn--small btn--ghost" href="https://www.linkedin.com/in/michaelbarros22" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+          <figure class="about-photo reveal" style="margin:0">
+            <img src="./assets/images/portrait.jpg" alt="Michael C. Barros presenting a conference paper" width="1000" height="1250" loading="lazy" />
+            <figcaption>Presenting at the Southwest Popular/American Culture Association conference, 2023.</figcaption>
+          </figure>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="dissertation" class="section-card">
-        <h2>Dissertation</h2>
-        <p>This dissertation examines whether simulation richness in dream content predicts religiosity and paranormal belief. Using a grounded cognition framework and longitudinal dream data, it models dreaming as a high-intensity simulation process and tests how variation in simulated experience relates to belief orientation.</p>
-      </section>
-    </main>
+    <section class="section" aria-labelledby="roles-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">What I do now</span>
+            <h2 id="roles-title" style="margin:0">Current roles</h2>
+          </div>
+        </div>
+        <ul class="row-list role-list reveal">
+          <li>
+            <span class="primary">Scholar</span>
+            <span class="detail">PhD candidate studying dreams, religion, and cognition at National University.</span>
+          </li>
+          <li>
+            <span class="primary">Instructor</span>
+            <span class="detail">Adjunct philosophy instructor at University of the People; instructor at Waypoint Institute.</span>
+          </li>
+          <li>
+            <span class="primary">Editor</span>
+            <span class="detail">Co-editor of academic volumes at Bloomsbury Academic; acquisitions &amp; developmental editing at Eclogue Press (fantasy &amp; sci-fi fiction).</span>
+          </li>
+          <li>
+            <span class="primary">Operator</span>
+            <span class="detail">Director of Business Affairs at OYD Live.</span>
+          </li>
+          <li>
+            <span class="primary">Discussion Group Lead</span>
+            <span class="detail">Certificate in Evangelization: The Evangelical Ethos of Bishop Barron · Word on Fire Institute.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <footer>
-      <p class="footer-tagline">Religion · Media · Imagination</p>
-      <nav class="footer-links" aria-label="Secondary">
+    <section class="section" id="dissertation" aria-labelledby="diss-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Dissertation</span>
+            <h2 id="diss-title" style="margin:0"><em>Sensorimotor Content in Dreams and Waking Religious Cognition</em></h2>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="meta" style="margin-bottom:1rem">National University · Chair: Dr. Patrick McNamara</p>
+          <p>The dissertation examines whether simulation richness in dream content predicts religiosity and paranormal belief. Using a grounded cognition framework — modeling dreaming as a high-intensity simulation process — and longitudinal dream data, it tests how variation in simulated experience relates to supernatural agent concepts and belief orientation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="edu-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Education</span>
+            <h2 id="edu-title" style="margin:0">Degrees</h2>
+          </div>
+        </div>
+        <ul class="row-list reveal">
+          <li>
+            <span>
+              <span class="primary">PhD in Psychology</span>
+              <span class="secondary">National University · Dissertation: Sensorimotor Content in Dreams and Waking Religious Cognition</span>
+            </span>
+            <span class="year">ABD — in progress</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">MA in Biblical &amp; Theological Studies</span>
+              <span class="secondary">Trevecca Nazarene University</span>
+            </span>
+            <span class="year">2021</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">BA in Mathematics</span>
+              <span class="secondary">Southern New Hampshire University · Applied Mathematics</span>
+            </span>
+            <span class="year">2018</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">BS in Electronics Engineering Technology</span>
+              <span class="secondary">ECPI University</span>
+            </span>
+            <span class="year">2015</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">AAS in Air &amp; Space Operations Technology</span>
+              <span class="secondary">Community College of the Air Force</span>
+            </span>
+            <span class="year">2013</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cert-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Certifications</span>
+            <h2 id="cert-title" style="margin:0">Certifications &amp; continuing education</h2>
+          </div>
+        </div>
+        <ul class="row-list reveal">
+          <li>
+            <span>
+              <span class="primary">Six Sigma Black Belt</span>
+              <span class="secondary">The Council for Six Sigma Certification</span>
+            </span>
+            <span class="year">2025</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">Researchers — Social and Behavioral Focus</span>
+              <span class="secondary">CITI Program</span>
+            </span>
+            <span class="year">2025</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">Basic Instructor Course (BIC)</span>
+              <span class="secondary">U.S. Air Force</span>
+            </span>
+            <span class="year">2014</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">Advanced Evangelical Ethos of Bishop Barron</span>
+              <span class="secondary">Word on Fire Institute · currently enrolled</span>
+            </span>
+            <span class="year">In progress</span>
+          </li>
+          <li>
+            <span>
+              <span class="primary">Certificate in Evangelization: The Evangelical Ethos of Bishop Barron</span>
+              <span class="secondary">Word on Fire Institute</span>
+            </span>
+            <span class="year">2025</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="name">Michael C. Barros</p>
+      <p class="tag">Essays · Research · Projects</p>
+      <nav class="footer-links" aria-label="Profiles">
         <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Substack</a>
         <a href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
         <a href="https://national.academia.edu/MichaelBarros" target="_blank" rel="noopener">Academia.edu</a>
+        <a href="https://www.linkedin.com/in/michaelbarros22" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
-      © <span id="year"></span> Michael C. Barros
-    </footer>
-  </div>
+      <p class="fine">© <span id="year"></span> Michael C. Barros</p>
+    </div>
+  </footer>
 
-  <script defer src="./js/data/data.js?v=20260410"></script>
-  <script defer src="./js/nav.js?v=20260326"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const year = document.getElementById('year');
-      if (year) year.textContent = new Date().getFullYear();
-    });
-  </script>
+  <script defer src="./js/site.js?v=20260714"></script>
 </body>
 </html>

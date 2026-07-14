@@ -1,39 +1,44 @@
 <!doctype html>
- <html lang="en">
- <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <title>Reading List</title>
-   <meta name="description" content="Books I've found most formative, organized by era and genre." />
-   <link rel="stylesheet" href="./style.css?v=20240607" />
-   <style>
-     .cover-card .badge { display: none !important; }
-     .cover-grid img { object-fit: cover; }
-    .cover-grid .cover-card:nth-child(n+5) { display: none; }
-   </style>
- </head>
- <body class="page page--reading">
-   <div class="shell">
-     <header class="site-header" aria-label="Site">
-       <a class="brand" href="./index.html">Michael C. Barros</a>
-       <nav class="nav" aria-label="Primary">
-         <a class="nav__link" href="./about.html">About</a>
-         <a class="nav__link" href="./books.html">Books</a>
-         <a class="nav__link" id="nav-blog" href="#" target="_blank" rel="noopener">Blog</a>
-         <a class="nav__link" href="./projects.html">Projects</a>
-         <a class="nav__link" id="nav-research" href="#" target="_blank" rel="noopener">Research</a>
-         <a class="nav__link" href="./contact.html">Contact</a>
-       </nav>
-     </header>
- 
-     <main>
-       <section class="page-header">
-         <span class="eyebrow">Reading list</span>
-         <h1 class="page-title">Reading List</h1>
-         <p class="page-kicker">Books I've found most formative. Bias: everything before 500 or after 1800. Inclusion ≠ endorsement.</p>
-       </section>
- 
-       <section class="reading-catalog" aria-label="Reading list organized by era and genre">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reading List — Michael C. Barros</title>
+  <meta name="description" content="Books I've found most formative, organized by era and genre." />
+  <meta name="theme-color" content="#faf8f2" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./style.css?v=20260714" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./index.html">Michael C.&nbsp;Barros</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="./about.html">About</a>
+        <a href="./books.html">Publications</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./timeline.html">Timeline</a>
+        <a href="./reading-list.html" aria-current="page">Reading List</a>
+        <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Blog<span class="ext">↗</span></a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Reading list</span>
+        <h1>Formative books</h1>
+        <p class="lede">Books I've found most formative, organized by era and genre. Bias: everything before 500 or after 1800. Inclusion ≠ endorsement.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="reading-catalog" aria-label="Reading list organized by era and genre">
  
 
 
@@ -1092,37 +1097,48 @@
           </div>
         </section>
       </section>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <p class="footer-tagline">Religion · Media · Imagination</p>
-      <nav class="footer-links" aria-label="Secondary">
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="name">Michael C. Barros</p>
+      <p class="tag">Essays · Research · Projects</p>
+      <nav class="footer-links" aria-label="Profiles">
         <a href="https://mythonoesis.substack.com/" target="_blank" rel="noopener">Substack</a>
         <a href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
         <a href="https://national.academia.edu/MichaelBarros" target="_blank" rel="noopener">Academia.edu</a>
+        <a href="https://www.linkedin.com/in/michaelbarros22" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
-      © <span id="year"></span> Michael C. Barros
-    </footer>
-  </div>
+      <p class="fine">© <span id="year"></span> Michael C. Barros</p>
+    </div>
+  </footer>
 
-  <script defer src="./js/data/data.js?v=20240607"></script>
-  <script defer src="./js/nav.js?v=20260326"></script>
+  <script defer src="./js/site.js?v=20260714"></script>
   <script>
+    // Hide cover cards whose image is missing; collapse empty subgenres/eras.
     document.addEventListener('DOMContentLoaded', () => {
-      const year = document.getElementById('year');
-      if (year) year.textContent = new Date().getFullYear();
-      const grids = document.querySelectorAll('.cover-grid');
-      grids.forEach((grid) => {
-        const cards = grid.querySelectorAll('.cover-card');
-        if (cards.length <= 1) return;
-        const keepCount = Math.max(1, Math.floor(cards.length / 2));
-        cards.forEach((card, index) => {
-          if (index >= keepCount) {
-            card.setAttribute('hidden', '');
-            card.setAttribute('aria-hidden', 'true');
-            card.setAttribute('tabindex', '-1');
+      const hideCard = (img) => {
+        const card = img.closest('.cover-card');
+        if (card) card.style.display = 'none';
+        const grid = card && card.closest('.cover-grid');
+        if (grid) {
+          const visible = [...grid.querySelectorAll('.cover-card')].filter(
+            (c) => c.style.display !== 'none' && !c.matches('[href$="/placeholder"]')
+          );
+          if (!visible.length) {
+            const sub = grid.closest('.reading-subgenre');
+            if (sub) sub.style.display = 'none';
+            const era = grid.closest('.reading-era');
+            if (era && ![...era.querySelectorAll('.reading-subgenre')].some((s) => s.style.display !== 'none')) {
+              era.style.display = 'none';
+            }
           }
-        });
+        }
+      };
+      document.querySelectorAll('.cover-grid img').forEach((img) => {
+        if (img.complete && img.naturalWidth === 0) hideCard(img);
+        else img.addEventListener('error', () => hideCard(img), { once: true });
       });
     });
   </script>
