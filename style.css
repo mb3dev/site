@@ -856,6 +856,7 @@ main { display: block; }
 
 .tl-dot--professional { background: #a8742a; }
 .tl-dot--teaching { background: #3e6f52; }
+.tl-dot--research { background: #2c7a7b; }
 .tl-dot--military { background: #44618c; }
 .tl-dot--publishing { background: #6d4a86; }
 
@@ -917,6 +918,7 @@ main { display: block; }
 
 .tl-bar--professional { background: #a8742a; color: #a8742a; }
 .tl-bar--teaching { background: #3e6f52; color: #3e6f52; }
+.tl-bar--research { background: #2c7a7b; color: #2c7a7b; }
 .tl-bar--military { background: #44618c; color: #44618c; }
 .tl-bar--publishing { background: #6d4a86; color: #6d4a86; }
 

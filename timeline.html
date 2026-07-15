@@ -34,7 +34,7 @@
       <div class="wrap">
         <span class="eyebrow">Career</span>
         <h1 id="tl-title">Work history</h1>
-        <p class="lede">Concurrent tracks across scholarship, teaching, publishing, and operations. Select any bar for details.</p>
+        <p class="lede">Concurrent tracks across scholarship, teaching, research, publishing, and operations. Select any bar for details.</p>
       </div>
     </section>
 
@@ -44,6 +44,7 @@
         <div class="tl-legend" aria-hidden="true">
           <span><i class="tl-dot tl-dot--professional"></i>Professional</span>
           <span><i class="tl-dot tl-dot--teaching"></i>Teaching</span>
+          <span><i class="tl-dot tl-dot--research"></i>Research</span>
           <span><i class="tl-dot tl-dot--military"></i>Military</span>
           <span><i class="tl-dot tl-dot--publishing"></i>Publishing</span>
         </div>
@@ -67,6 +68,7 @@
             <li>Barros Consulting — Owner / Operations Consultant (2024–present)</li>
             <li>Eclogue Press — Acquisitions &amp; Developmental Editor (2025–present)</li>
             <li>OYD Live — Director of Business Affairs (2025–present)</li>
+            <li>Harmony Academy (Sanford Learning Lab, National University) — Research Assistant (2026–present)</li>
           </ol>
         </noscript>
 
@@ -94,11 +96,13 @@
   document.addEventListener('DOMContentLoaded', () => {
     // end: null = present
     const JOBS = [
+      { id: 11, title: 'Research Assistant', org: 'Harmony Academy · Sanford Learning Lab, National University', location: '', start: 2026.35, end: null, track: 'Research',
+        bullets: ['Research assistant at Harmony Academy, part of the Sanford Learning Lab at National University'] },
       { id: 1, title: 'Director of Business Affairs', org: 'OYD Live', location: 'Largo, FL', start: 2025.9, end: null, track: 'Professional',
         bullets: ['Event coordination', 'Operations management'] },
       { id: 2, title: 'Acquisitions & Developmental Editor', org: 'Eclogue Press', location: '', start: 2025.6, end: null, track: 'Publishing',
         bullets: ['Acquisitions and developmental editing in the fantasy and sci-fi fiction genre'] },
-      { id: 3, title: 'Owner / Operations Consultant', org: 'Barros Consulting', location: 'Alexandria, VA (remote)', start: 2024.6, end: null, track: 'Professional',
+      { id: 3, title: 'Owner / Operations Consultant', org: 'Barros Consulting', location: 'Alexandria, VA (remote)', start: 2024.6, end: 2026.1, track: 'Professional',
         bullets: [
           'Lean/Six Sigma-based consulting for service businesses',
           'Fractional COO for 541 Junk Removal and 541 Hardscaping',
