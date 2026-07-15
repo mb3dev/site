@@ -503,7 +503,12 @@ main { display: block; }
   font-weight: 380;
 }
 
-.hero .tags { margin-top: 2.6rem; }
+.hero__areas { margin-top: 2.6rem; }
+
+.hero__areas .meta--caps {
+  display: block;
+  margin-bottom: 0.7rem;
+}
 
 /* ---------- Featured publication ---------- */
 
