@@ -19,7 +19,7 @@
       .join('\n        ');
     host.innerHTML = `
       <div class="wrap">
-        <a class="brand" href="/">Michael C.&nbsp;Barros</a>
+        <a class="brand" href="/"><img class="brand__mark" src="/assets/logo-mb.svg" alt="" width="34" height="34" aria-hidden="true" />Michael C.&nbsp;Barros</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav class="nav" id="site-nav" aria-label="Primary">
         ${links}

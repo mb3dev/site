@@ -203,6 +203,9 @@ main { display: block; }
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--serif);
   font-size: 1.2rem;
   font-weight: 500;
@@ -211,6 +214,13 @@ main { display: block; }
   white-space: nowrap;
 }
 .brand:hover { color: var(--ink); text-decoration: none; }
+
+.brand__mark {
+  display: block;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: none;
+}
 
 .nav {
   display: flex;
@@ -476,7 +486,7 @@ main { display: block; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(4.5rem, 11vw, 8.5rem) clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(2.25rem, 5vw, 3.75rem) clamp(4rem, 9vw, 7rem);
 }
 
 .hero::before {
@@ -492,13 +502,6 @@ main { display: block; }
 }
 
 .hero .wrap { position: relative; }
-
-.hero__mark {
-  display: block;
-  width: clamp(60px, 9vw, 80px);
-  height: auto;
-  margin-bottom: 1.6rem;
-}
 
 .hero h1 {
   max-width: 21ch;
