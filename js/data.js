@@ -32,7 +32,7 @@ window.SITE_DATA = {
     {
       id: 'dissertation',
       shortTitle: 'Dissertation',
-      title: 'Dissertation: Sensorimotor Content in Dreams and Waking Religious Cognition',
+      title: 'Dissertation: The Relationship Between Sensorimotor Dream Content and Waking Spiritual Experience',
       org: 'National University · Chair: Dr. Patrick McNamara',
       fields: ['dissertation', 'csr'],
       status: 'Active',
@@ -67,6 +67,7 @@ window.SITE_DATA = {
     },
     {
       id: 'waypoint',
+      type: 'organization',
       shortTitle: 'Waypoint Institute',
       title: 'Waypoint Institute',
       org: 'waypoint.institute',
@@ -77,6 +78,20 @@ window.SITE_DATA = {
       now: 'Currently in the second round of beta testing.',
       tags: ['Christian Education', 'Tuition-Free', 'Formation'],
       url: 'https://waypoint.institute',
+    },
+    {
+      id: 'religious-cognition-collab',
+      type: 'organization',
+      shortTitle: 'Religious Cognition Collaborative',
+      title: 'Religious Cognition Collaborative',
+      org: 'religiouscognitioncollab.org · Managing Director',
+      fields: ['csr'],
+      status: 'Active',
+      desc: 'A research organization advancing the interdisciplinary study of religious cognition — bringing together scholars across psychology, cognitive science, and religious studies to support empirical work on how the mind gives rise to religious and spiritual experience.',
+      current: 'operations &amp; research coordination',
+      now: 'Coordinating research and operations as Managing Director.',
+      tags: ['Cognitive Science of Religion', 'Research Network', 'Collaboration'],
+      url: 'https://www.religiouscognitioncollab.org',
     },
   ],
 };
