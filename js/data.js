@@ -70,7 +70,7 @@ window.SITE_DATA = {
       type: 'organization',
       shortTitle: 'Waypoint Institute',
       title: 'Waypoint Institute',
-      org: 'waypoint.institute',
+      org: 'waypoint.institute · Operations Director',
       fields: ['education'],
       status: 'Active',
       desc: 'A tuition-free Christian college education pursuing the Good, the True, and the Beautiful. Waypoint Institute offers a supporter-funded college pathway in Scripture, doctrine, culture, and mission — delivered through self-paced modules, guided checkpoints, and oral capstone examinations. Designed to make serious theological formation accessible without cost barriers.',
