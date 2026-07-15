@@ -735,6 +735,13 @@ main { display: block; }
   font-weight: 400;
 }
 
+/* Force the date onto its own line below ~840px so short entries (e.g. a
+   brief degree title) don't sit inline while longer siblings wrap — keeps
+   every row's date in the same position regardless of content length. */
+@media (max-width: 840px) {
+  .row-list .entry { width: 100%; }
+}
+
 .row-list .year {
   font-size: 0.82rem;
   color: var(--accent);
