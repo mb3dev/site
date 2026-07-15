@@ -67,16 +67,12 @@
   }
 
   /* ---------- Projects cards ---------- */
-  function renderProjects() {
-    const host = document.querySelector('[data-projects]');
-    if (!host || !D.projects) return;
-    host.innerHTML = D.projects
-      .map((p) => {
-        const heading = p.url
-          ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
-          : p.title;
-        const tags = p.tags.map((t) => `<span>${t}</span>`).join('\n            ');
-        return `
+  function projectCard(p) {
+    const heading = p.url
+      ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
+      : p.title;
+    const tags = p.tags.map((t) => `<span>${t}</span>`).join('\n            ');
+    return `
         <article class="project reveal" id="${p.id}" data-fields="${p.fields.join(' ')}">
           <div class="project__head">
             <h2>${heading}</h2>
@@ -89,8 +85,26 @@
             ${tags}
           </div>
         </article>`;
-      })
-      .join('');
+  }
+
+  function renderProjects() {
+    if (!D.projects) return;
+    // Top group (unlabeled): everything that isn't an organization.
+    const work = document.querySelector('[data-projects]');
+    if (work) {
+      work.innerHTML = D.projects
+        .filter((p) => p.type !== 'organization')
+        .map(projectCard)
+        .join('');
+    }
+    // Bottom group: standing organizations, under an "Organizations" heading.
+    const orgHost = document.querySelector('[data-organizations]');
+    if (orgHost) {
+      const orgs = D.projects.filter((p) => p.type === 'organization');
+      orgHost.innerHTML = orgs.length
+        ? `<h2 class="group-head reveal">Organizations</h2>${orgs.map(projectCard).join('')}`
+        : '';
+    }
   }
 
   /* ---------- Project filters ---------- */
