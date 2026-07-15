@@ -494,7 +494,7 @@ main { display: block; }
 
 .hero h1 {
   max-width: 21ch;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.9em;
 }
 
 .hero h1 .accent {
@@ -502,8 +502,6 @@ main { display: block; }
   color: var(--accent);
   font-weight: 380;
 }
-
-.hero .lede { margin-bottom: 2.2rem; }
 
 .hero .tags { margin-top: 2.6rem; }
 
