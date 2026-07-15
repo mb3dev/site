@@ -6,8 +6,19 @@
   <title>About — Michael C. Barros</title>
   <meta name="description" content="Michael C. Barros — scholar of religion and cognition, instructor, and editor. Current roles, education, and certifications." />
   <meta name="theme-color" content="#faf8f2" />
+  <link rel="canonical" href="https://michaelcbarros.com/about.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Michael C. Barros" />
+  <meta property="og:title" content="About — Michael C. Barros" />
+  <meta property="og:description" content="Michael C. Barros — scholar of religion and cognition, instructor, and editor. Current roles, education, and certifications." />
+  <meta property="og:url" content="https://michaelcbarros.com/about.html" />
+  <meta property="og:image" content="https://michaelcbarros.com/assets/images/portrait.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Michael C. Barros" />
+  <meta name="twitter:description" content="Michael C. Barros — scholar of religion and cognition, instructor, and editor. Current roles, education, and certifications." />
+  <meta name="twitter:image" content="https://michaelcbarros.com/assets/images/portrait.jpg" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./style.css?v=20260714" />
+  <link rel="stylesheet" href="./style.css?v=20260715" />
   <style>
     .about-grid {
       display: grid;
@@ -28,24 +39,33 @@
       font-style: italic;
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michael C. Barros",
+    "url": "https://michaelcbarros.com/",
+    "image": "https://michaelcbarros.com/assets/images/portrait.jpg",
+    "jobTitle": "PhD Candidate; Research Assistant",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "National University" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "National University" },
+      { "@type": "CollegeOrUniversity", "name": "Trevecca Nazarene University" },
+      { "@type": "CollegeOrUniversity", "name": "Southern New Hampshire University" }
+    ],
+    "knowsAbout": ["Cognitive Science of Religion", "Grounded Cognition", "Religion and Culture", "Theology of Culture", "Philip K. Dick"],
+    "sameAs": [
+      "https://orcid.org/0000-0001-5462-8926",
+      "https://national.academia.edu/MichaelBarros",
+      "https://www.linkedin.com/in/michaelbarros22"
+    ]
+  }
+  </script>
 </head>
-<body>
+<body data-page="about">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="./index.html">Michael C.&nbsp;Barros</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="./about.html" aria-current="page">About</a>
-        <a href="./books.html">Books</a>
-        <a href="./projects.html">Projects</a>
-        <a href="./timeline.html">Timeline</a>
-        <a href="./reading-list.html">Reading List</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header" data-site-header></header>
 
   <main id="main">
 
@@ -224,21 +244,9 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="name">Michael C. Barros</p>
-      <nav class="tag" aria-label="Explore">
-        <a href="./about.html#dissertation">Research</a> · <a href="./books.html">Books</a> · <a href="./projects.html">Projects</a>
-      </nav>
-      <nav class="footer-links" aria-label="Profiles">
-        <a href="https://orcid.org/0000-0001-5462-8926" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://national.academia.edu/MichaelBarros" target="_blank" rel="noopener">Academia.edu</a>
-        <a href="https://www.linkedin.com/in/michaelbarros22" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
-      <p class="fine">© <span id="year"></span> Michael C. Barros</p>
-    </div>
-  </footer>
+  <footer class="site-footer" data-site-footer></footer>
 
-  <script defer src="./js/site.js?v=20260714"></script>
+  <script defer src="./js/data.js?v=20260715"></script>
+  <script defer src="./js/site.js?v=20260715"></script>
 </body>
 </html>
