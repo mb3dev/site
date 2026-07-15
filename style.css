@@ -721,7 +721,7 @@ main { display: block; }
   align-items: baseline;
   justify-content: space-between;
   gap: 0.5rem 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 1.1rem 1.3rem;
   background: var(--card);
   border: 1px solid var(--rule);
@@ -751,10 +751,18 @@ main { display: block; }
   font-weight: 400;
 }
 
+/* .row-list li is flex-wrap:nowrap so .year always stays pinned on the
+   same line as .entry; min-width:0 overrides .entry's default min-width:
+   auto so it can shrink and wrap its own text instead of forcing the row
+   to overflow (or, pre-nowrap, knocking .year onto its own line whenever
+   a title's natural one-line width left no room beside .year). */
+.row-list .entry { min-width: 0; }
+
 /* Force the date onto its own line below ~840px so short entries (e.g. a
    brief degree title) don't sit inline while longer siblings wrap — keeps
    every row's date in the same position regardless of content length. */
 @media (max-width: 840px) {
+  .row-list li { flex-wrap: wrap; }
   .row-list .entry { width: 100%; }
 }
 
