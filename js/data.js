@@ -38,10 +38,7 @@ window.SITE_DATA = {
       title: 'Supernatural-Agent Concepts in Dreams',
       org: 'National University · Chair: Dr. Patrick McNamara',
       status: 'Active',
-      desc:
-        '<p>My doctoral research examines how supernatural agents and religious concepts are formed and represented during dreams. The project brings together grounded cognition, predictive processing, dream research, and the cognitive science of religion.</p>' +
-        '<p>Using longitudinal dream reports, psychological measures, and sleep data, the study investigates how sensory, emotional, social, and narrative features contribute to changes in religious and supernatural thought across sleep and waking experience.</p>' +
-        '<p>The broader goal is to develop an empirically grounded account of how religious concepts emerge from embodied and simulated experience rather than treating them solely as abstract beliefs.</p>',
+      desc: '<p>Doctoral research on how supernatural agents and religious concepts form and appear in dreams, drawing on grounded cognition, predictive processing, and the cognitive science of religion.</p>',
       current: 'data analysis &amp; chapter drafting',
       tags: ['Grounded Cognition', 'Dreams', 'Supernatural Agents', 'Religiosity'],
     },
@@ -65,7 +62,7 @@ window.SITE_DATA = {
       title: 'Waypoint Institute',
       org: 'waypoint.institute · Operations Director',
       status: 'Active',
-      desc: '<p>Waypoint Institute is a developing Christian educational initiative intended to provide serious theological and humanities education without tuition barriers. Its long-term aim is to make structured Christian learning available to students who may not have access to conventional academic institutions.</p>',
+      desc: '<p>A developing tuition-free Christian education initiative in theology and the humanities.</p>',
       url: 'https://waypoint.institute',
     },
     {
@@ -74,7 +71,7 @@ window.SITE_DATA = {
       title: 'Religious Cognition Collaborative',
       org: 'religiouscognitioncollab.org · Managing Director',
       status: 'Active',
-      desc: '<p>The Religious Cognition Collaborative supports interdisciplinary research on religion, cognition, neuroscience, psychology, and religious experience. Its work is intended to connect researchers across fields, encourage collaborative projects, and make research on religious cognition more accessible beyond narrow disciplinary boundaries.</p>',
+      desc: '<p>A research network connecting scholars studying religion, cognition, and religious experience.</p>',
       url: 'https://www.religiouscognitioncollab.org',
     },
   ],
