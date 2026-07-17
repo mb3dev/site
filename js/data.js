@@ -5,7 +5,7 @@ window.SITE_DATA = {
   nav: [
     { href: '/', label: 'Home', key: 'home' },
     { href: '/about', label: 'About', key: 'about' },
-    { href: '/projects', label: 'Research & Projects', key: 'projects' },
+    { href: '/initiatives', label: 'Initiatives', key: 'initiatives' },
     { href: '/books', label: 'Books', key: 'books' },
     { href: '/contact', label: 'Contact', key: 'contact' },
   ],
@@ -20,45 +20,30 @@ window.SITE_DATA = {
   email: 'mbarros@nu.edu',
   cvPdf: '/assets/Barros_CV_2026.pdf',
 
+  // Homepage "Research Areas" tags — kept in sync with the CV's Research
+  // Interests line.
+  researchInterests: [
+    'Cognitive Science of Religion',
+    'Dreams',
+    'Theology of Culture',
+    'Religion and Culture',
+    'Grounded Cognition',
+    'Media Theory',
+  ],
+
   // Footer page links, in display order, plus a direct CV download.
   footerNav: [
     { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Research & Projects' },
+    { href: '/initiatives', label: 'Initiatives' },
     { href: '/books', label: 'Books' },
     { href: '/contact', label: 'Contact' },
     { href: '/assets/Barros_CV_2026.pdf', label: 'Download CV', blank: true },
   ],
 
-  // Research & Projects page. `type: 'organization'` entries render under
-  // "Initiatives"; `brief: true` entries render as a short linked card
-  // pointing back to their full write-up on the Books page.
-  projects: [
-    {
-      id: 'dissertation',
-      title: 'Supernatural-Agent Concepts in Dreams',
-      org: 'National University · Chair: Dr. Patrick McNamara',
-      status: 'Active',
-      desc: '<p>Doctoral research on how supernatural agents and religious concepts form and appear in dreams, drawing on grounded cognition, predictive processing, and the cognitive science of religion.</p>',
-      current: 'data analysis &amp; chapter drafting',
-      tags: ['Grounded Cognition', 'Dreams', 'Supernatural Agents', 'Religiosity'],
-    },
-    {
-      id: 'zelda-religion',
-      brief: true,
-      title: 'The Legend of Zelda &amp; Religion',
-      desc: 'An edited volume under contract examining how religion and the sacred emerge from the structure and narrative of <em>The Legend of Zelda</em> series.',
-      bookUrl: '/books#zelda',
-    },
-    {
-      id: 'omega-point',
-      brief: true,
-      title: "Philip K. Dick's Omega Point",
-      desc: "A monograph under contract examining the relationship between Philip K. Dick's religious thought and the theology of Pierre Teilhard de Chardin.",
-      bookUrl: '/books#omega-point',
-    },
+  // Initiatives page.
+  initiatives: [
     {
       id: 'waypoint',
-      type: 'organization',
       title: 'Waypoint Institute',
       org: 'waypoint.institute · Operations Director',
       status: 'Active',
@@ -67,7 +52,6 @@ window.SITE_DATA = {
     },
     {
       id: 'religious-cognition-collab',
-      type: 'organization',
       title: 'Religious Cognition Collaborative',
       org: 'religiouscognitioncollab.org · Managing Director',
       status: 'Active',
