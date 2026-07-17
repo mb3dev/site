@@ -1,6 +1,6 @@
 /* Shared site behavior:
    - injects the header + footer from window.SITE_DATA (single source of truth)
-   - renders the Research & Projects page cards from SITE_DATA.projects
+   - renders the Initiatives page cards and the homepage research-area tags
    - wires nav toggle, copy buttons, scroll reveal
    Loaded with `defer`, so the DOM is parsed before this runs. */
 (() => {
@@ -55,23 +55,11 @@
       </div>`;
   }
 
-  /* ---------- Research & Projects cards ---------- */
-  function projectCard(p) {
-    if (p.brief) {
-      return `
-        <article class="project project--brief reveal" id="${p.id}">
-          <h2>${p.title}</h2>
-          <p class="desc">${p.desc}</p>
-          <a class="arrow-link" href="${p.bookUrl}">View book details</a>
-        </article>`;
-    }
+  /* ---------- Initiatives cards ---------- */
+  function initiativeCard(p) {
     const heading = p.url
       ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
       : p.title;
-    const tags = p.tags
-      ? `<div class="tags">\n            ${p.tags.map((t) => `<span>${t}</span>`).join('\n            ')}\n          </div>`
-      : '';
-    const current = p.current ? `<p class="current"><strong>Current:</strong> ${p.current}</p>` : '';
     return `
         <article class="project reveal" id="${p.id}">
           <div class="project__head">
@@ -80,26 +68,20 @@
           </div>
           <p class="org">${p.org}</p>
           <div class="desc">${p.desc}</div>
-          ${current}
-          ${tags}
         </article>`;
   }
 
-  function renderProjects() {
-    if (!D.projects) return;
-    const research = D.projects.filter((p) => p.type !== 'organization');
-    const initiatives = D.projects.filter((p) => p.type === 'organization');
+  function renderInitiatives() {
+    const host = document.querySelector('[data-initiatives]');
+    if (!host || !D.initiatives) return;
+    host.innerHTML = D.initiatives.map(initiativeCard).join('');
+  }
 
-    const work = document.querySelector('[data-projects]');
-    if (work) {
-      work.innerHTML = `<h2 class="group-head group-head--first reveal">Research</h2>${research.map(projectCard).join('')}`;
-    }
-    const initHost = document.querySelector('[data-initiatives]');
-    if (initHost) {
-      initHost.innerHTML = initiatives.length
-        ? `<h2 class="group-head reveal">Initiatives</h2>${initiatives.map(projectCard).join('')}`
-        : '';
-    }
+  /* ---------- Homepage research-area tags ---------- */
+  function renderResearchInterests() {
+    const host = document.querySelector('[data-research-tags]');
+    if (!host || !D.researchInterests) return;
+    host.innerHTML = D.researchInterests.map((t) => `<span>${t}</span>`).join('\n            ');
   }
 
   /* ---------- Mobile nav toggle ---------- */
@@ -171,7 +153,8 @@
   /* ---------- Init (order matters: inject, then render, then wire) ---------- */
   renderHeader();
   renderFooter();
-  renderProjects();
+  renderInitiatives();
+  renderResearchInterests();
   wireNavToggle();
   wireCopyButtons();
   wireReveal();

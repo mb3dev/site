@@ -896,38 +896,8 @@ main { display: block; }
 
 .project .desc { font-size: 0.98rem; }
 
-.project .current {
-  font-size: 0.92rem;
-  color: var(--ink);
-  margin: 0.9rem 0 1.1rem;
-}
-.project .current strong { font-weight: 600; color: var(--accent-deep); }
-
 .project .desc p { margin: 0 0 0.9rem; }
 .project .desc p:last-child { margin-bottom: 0; }
-
-.project--brief { padding-bottom: clamp(1.6rem, 3.5vw, 2.25rem); }
-.project--brief h2 { font-size: clamp(1.2rem, 2vw, 1.4rem); }
-.project--brief .desc { margin: 0.5rem 0 0.8rem; }
-
-.project.is-hidden { display: none; }
-
-.group-head {
-  margin: clamp(2.75rem, 6vw, 4.5rem) 0 0;
-  padding-top: clamp(2rem, 4.5vw, 3rem);
-  border-top: 2px solid var(--rule-strong);
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-/* The heading is the group divider, so the first card below it drops its own top rule. */
-.group-head + .project { border-top: none; padding-top: clamp(1.4rem, 3vw, 2rem); }
-
-/* First group on a page has no preceding content to divide from. */
-.group-head--first { margin-top: 0; padding-top: 0; border-top: none; }
 
 /* ---------- Timeline ---------- */
 
