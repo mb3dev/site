@@ -3,260 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Timeline — Michael C. Barros</title>
-  <meta name="description" content="Fifteen years across satellite operations, teaching, publishing, and consulting — an interactive career timeline." />
+  <title>Timeline moved — Michael C. Barros</title>
+  <meta name="description" content="The career timeline is now part of the About page." />
   <meta name="theme-color" content="#f5f7fb" />
-  <link rel="canonical" href="https://michaelcbarros.com/timeline.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Michael C. Barros" />
-  <meta property="og:title" content="Timeline — Michael C. Barros" />
-  <meta property="og:description" content="Fifteen years across satellite operations, teaching, publishing, and consulting — an interactive career timeline." />
-  <meta property="og:url" content="https://michaelcbarros.com/timeline.html" />
-  <meta property="og:image" content="https://michaelcbarros.com/assets/images/portrait.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Timeline — Michael C. Barros" />
-  <meta name="twitter:description" content="Fifteen years across satellite operations, teaching, publishing, and consulting — an interactive career timeline." />
-  <meta name="twitter:image" content="https://michaelcbarros.com/assets/images/portrait.jpg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png?v=20260716d" />
-  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=20260716d" />
-  <link rel="stylesheet" href="./style.css?v=20260716d" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="0; url=/about.html#career-education" />
+  <link rel="canonical" href="https://michaelcbarros.com/about.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png?v=20260717" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=20260717" />
+  <link rel="stylesheet" href="./style.css?v=20260717" />
+  <script>location.replace('/about.html#career-education');</script>
 </head>
-<body data-page="timeline">
+<body data-page="">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-site-header></header>
 
   <main id="main">
-
-    <section class="page-head" aria-labelledby="tl-title">
-      <div class="wrap">
-        <span class="eyebrow">Career</span>
-        <h1 id="tl-title">Work history</h1>
-        <p class="lede">Concurrent tracks across scholarship, teaching, research, publishing, and operations. Select any bar for details.</p>
-      </div>
-    </section>
-
-    <section aria-label="Career timeline" style="padding-bottom: var(--gap)">
-      <div class="wrap">
-
-        <div class="tl-legend" aria-hidden="true">
-          <span><i class="tl-dot tl-dot--professional"></i>Professional</span>
-          <span><i class="tl-dot tl-dot--teaching"></i>Teaching</span>
-          <span><i class="tl-dot tl-dot--research"></i>Research</span>
-          <span><i class="tl-dot tl-dot--military"></i>Military</span>
-          <span><i class="tl-dot tl-dot--publishing"></i>Publishing</span>
+    <div class="wrap">
+      <section class="notfound">
+        <span class="eyebrow">Moved</span>
+        <h1>This page has moved.</h1>
+        <p>The career timeline is now part of the About page, under Career and Education.</p>
+        <div class="cta-row">
+          <a class="btn" href="/about.html#career-education">View the timeline on About</a>
         </div>
-
-        <div class="tl-chart-wrap">
-          <div class="tl-chart" id="tl-chart"></div>
-        </div>
-
-        <ul class="tl-list" id="tl-list"></ul>
-
-        <div class="tl-detail" id="tl-detail" hidden aria-live="polite"></div>
-
-        <noscript>
-          <ol style="margin-top:1rem; padding-left:1.2rem; color:var(--ink-soft)">
-            <li>United States Air Force — Staff Instructor &amp; Satellite Systems Operator (2011–2016)</li>
-            <li>Raytheon — Systems Engineer &amp; Satellite Operations Engineer (2016–2018)</li>
-            <li>Corrales Construction — Owner / Project Manager (2018–2019)</li>
-            <li>American Food Equipment Company — Electrician (2019–2020)</li>
-            <li>Boise Classical Academy — Teacher &amp; Academic Administrator (2020–2024)</li>
-            <li>University of the People — Adjunct Instructor (2023–present)</li>
-            <li>Barros Consulting — Owner / Operations Consultant (2024–present)</li>
-            <li>Eclogue Press — Acquisitions &amp; Developmental Editor (2025–present)</li>
-            <li>OYD Live — Director of Business Affairs (2025–present)</li>
-            <li>Harmony Academy (Sanford Learning Lab, National University) — Research Assistant (2026–present)</li>
-          </ol>
-        </noscript>
-
-      </div>
-    </section>
-
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer" data-site-footer></footer>
 
-  <script defer src="./js/data.js?v=20260716d"></script>
-  <script defer src="./js/site.js?v=20260716d"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // end: null = present
-    const JOBS = [
-      { id: 11, title: 'Research Assistant', org: 'Harmony Academy · Sanford Learning Lab, National University', location: '', start: 2026.35, end: null, track: 'Research',
-        bullets: ['Research assistant at Harmony Academy, part of the Sanford Learning Lab at National University'] },
-      { id: 1, title: 'Director of Business Affairs', org: 'OYD Live', location: 'Largo, FL', start: 2025.9, end: null, track: 'Professional',
-        bullets: ['Event coordination', 'Operations management'] },
-      { id: 2, title: 'Acquisitions & Developmental Editor', org: 'Eclogue Press', location: '', start: 2025.6, end: null, track: 'Publishing',
-        bullets: ['Acquisitions and developmental editing in the fantasy and sci-fi fiction genre'] },
-      { id: 3, title: 'Owner / Operations Consultant', org: 'Barros Consulting', location: 'Alexandria, VA (remote)', start: 2024.6, end: 2026.1, track: 'Professional',
-        bullets: [
-          'Lean/Six Sigma-based consulting for service businesses',
-          'Fractional COO for 541 Junk Removal and 541 Hardscaping',
-          'Lead operations for K&T Investments via KOTA (K&T Operations, Tracking, and Automation)',
-          'Developed performance dashboards, SOPs, and onboarding infrastructure',
-          'Improved and automated construction tracking workflow'
-        ] },
-      { id: 4, title: 'Adjunct Instructor', org: 'University of the People', location: 'Pasadena, CA (remote)', start: 2023.8, end: null, track: 'Teaching',
-        bullets: [
-          'Introduction to Philosophy (PHIL 1402)',
-          'Introduction to Global Ethics (PHIL 1404)',
-          'AY 2026 curriculum refresh: Human Diseases (HS 3210)'
-        ] },
-      { id: 5, title: 'Teacher & Academic Administrator', org: 'Boise Classical Academy', location: 'Boise, ID', start: 2020.6, end: 2024.6, track: 'Teaching',
-        bullets: [
-          'Taught Literature, History, and Psychology to grades 9–12',
-          'Led the Capstone course; guided Junior Theses and Senior Projects',
-          'Served as academic administrator for 2 years',
-          'Concurrent credit courses: Christian Thought (THEO 1213), Early Modern Literature (ENGL 2843) through Northwest University'
-        ] },
-      { id: 6, title: 'Electrician', org: 'American Food Equipment Company', location: 'Caldwell, ID', start: 2019.4, end: 2020.6, track: 'Professional',
-        bullets: [
-          'Assembled starter & control panels for factory equipment',
-          'Integrated electrical systems with large-scale equipment'
-        ] },
-      { id: 7, title: 'Owner / Project Manager', org: 'Corrales Construction', location: 'Bend, OR', start: 2018.3, end: 2019.4, track: 'Professional',
-        bullets: [
-          'Managed a team of 8 (roofers, laborers, admin, marketing)',
-          'Project management, material estimation, delegation, and daily oversight'
-        ] },
-      { id: 8, title: 'Systems Engineer & Satellite Operations Engineer', org: 'Raytheon', location: 'Aurora, CO', start: 2016.3, end: 2018.3, track: 'Professional',
-        bullets: [
-          'Software integration & testing for the Joint Polar Satellite System (JPSS) – Common Ground System',
-          'SME for Payload Support Tool (PST); participated in pre-launch with NASA and NOAA',
-          'Reconfigured satellite systems in near real-time based on alerts and data'
-        ] },
-      { id: 9, title: 'Staff Instructor & Satellite Systems Operator', org: 'United States Air Force', location: 'Aurora, CO', start: 2011.8, end: 2016.3, track: 'Military',
-        bullets: [
-          'One of 13 TT&C subject matter expert graduates for next-gen Space-Based Infrared Systems satellite operations',
-          'Taught 45 students across three cadre cohorts; developed Plans of Instruction, lesson plans, and exams',
-          'Manually executed 1,374 satellite commands including health monitoring, orbital maneuvers, and disposal operations',
-          'Airman of the Quarter (2014) · Satellite Systems Operator of the Year (2013) · Panther Challenge Winner (2013)'
-        ] },
-      { id: 10, title: 'Test Engineering Intern', org: 'Johnson Controls', location: 'Largo, FL', start: 2011.4, end: 2011.6, track: 'Professional',
-        bullets: [
-          'Completed seismic test reporting project 9 weeks ahead of schedule',
-          'Authored SOPs for 7 lab procedures'
-        ] },
-    ];
-
-    const now = new Date();
-    const NOW = now.getFullYear() + now.getMonth() / 12;
-    const MIN = 2011;
-    const RANGE = NOW - MIN;
-    const pct = (y) => ((y - MIN) / RANGE) * 100;
-    const trackClass = (t) => t.toLowerCase();
-    const fmtYear = (y) => (y === null ? 'Present' : String(Math.floor(y)));
-    const period = (j) => `${fmtYear(j.start)} – ${fmtYear(j.end)}`;
-
-    const chart = document.getElementById('tl-chart');
-    const list = document.getElementById('tl-list');
-    const detail = document.getElementById('tl-detail');
-    let selectedId = null;
-
-    // Year axis + gridlines
-    const axisYears = [];
-    for (let y = MIN; y <= Math.floor(NOW); y += 2) axisYears.push(y);
-    const axis = document.createElement('div');
-    axis.className = 'tl-axis';
-    axis.setAttribute('aria-hidden', 'true');
-    axisYears.forEach((y) => {
-      const s = document.createElement('span');
-      s.style.left = pct(y) + '%';
-      s.textContent = y;
-      axis.appendChild(s);
-    });
-    const nowLbl = document.createElement('span');
-    nowLbl.style.left = '100%';
-    nowLbl.textContent = 'Now';
-    axis.appendChild(nowLbl);
-    chart.appendChild(axis);
-
-    const grid = document.createElement('div');
-    grid.className = 'tl-gridlines';
-    axisYears.forEach((y) => {
-      const i = document.createElement('i');
-      i.style.left = pct(y) + '%';
-      grid.appendChild(i);
-    });
-    chart.appendChild(grid);
-
-    // Bars
-    const rows = document.createElement('div');
-    rows.className = 'tl-rows';
-    JOBS.forEach((job) => {
-      const row = document.createElement('div');
-      row.className = 'tl-row';
-      const end = job.end === null ? NOW : job.end;
-      const left = pct(job.start);
-      const width = Math.max(pct(end) - left, 0.8);
-
-      const bar = document.createElement('button');
-      bar.type = 'button';
-      bar.className = `tl-bar tl-bar--${trackClass(job.track)}`;
-      bar.style.left = left + '%';
-      bar.style.width = width + '%';
-      bar.setAttribute('aria-expanded', 'false');
-      bar.setAttribute('aria-label', `${job.title}, ${job.org}, ${period(job)}`);
-      bar.dataset.id = job.id;
-
-      const lbl = document.createElement('span');
-      lbl.textContent = job.org;
-      if (width < 12) {
-        lbl.className = left + width > 82 ? 'lbl lbl--out lbl--out-left' : 'lbl lbl--out';
-        lbl.style.color = '';
-      } else {
-        lbl.className = 'lbl';
-      }
-      bar.appendChild(lbl);
-      bar.addEventListener('click', () => select(job.id));
-      row.appendChild(bar);
-      rows.appendChild(row);
-    });
-    chart.appendChild(rows);
-
-    // Mobile list
-    JOBS.forEach((job) => {
-      const li = document.createElement('li');
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.dataset.id = job.id;
-      btn.innerHTML = `
-        <i class="tl-dot tl-dot--${trackClass(job.track)}"></i>
-        <span class="org"></span>
-        <span class="yrs">${period(job)}</span>
-        <span class="role"></span>`;
-      btn.querySelector('.org').textContent = job.org;
-      btn.querySelector('.role').textContent = job.title;
-      btn.addEventListener('click', () => select(job.id));
-      li.appendChild(btn);
-      list.appendChild(li);
-    });
-
-    function select(id) {
-      selectedId = selectedId === id ? null : id;
-      document.querySelectorAll('.tl-bar').forEach((b) => {
-        b.setAttribute('aria-expanded', String(Number(b.dataset.id) === selectedId));
-      });
-      if (selectedId === null) {
-        detail.hidden = true;
-        detail.innerHTML = '';
-        return;
-      }
-      const job = JOBS.find((j) => j.id === selectedId);
-      detail.innerHTML = `
-        <span class="meta meta--caps" style="display:inline-flex;align-items:center;gap:0.45rem"><i class="tl-dot tl-dot--${trackClass(job.track)}"></i>${job.track}</span>
-        <h3></h3>
-        <p class="org"></p>
-        <p class="meta">${period(job)}</p>
-        <ul>${job.bullets.map(() => '<li></li>').join('')}</ul>`;
-      detail.querySelector('h3').textContent = job.title;
-      detail.querySelector('.org').textContent = job.org + (job.location ? ' · ' + job.location : '');
-      detail.querySelectorAll('ul li').forEach((li, i) => { li.textContent = job.bullets[i]; });
-      detail.hidden = false;
-      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  });
-  </script>
+  <script defer src="./js/data.js?v=20260717"></script>
+  <script defer src="./js/site.js?v=20260717"></script>
 </body>
 </html>

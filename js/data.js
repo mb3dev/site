@@ -3,94 +3,80 @@
 window.SITE_DATA = {
   // Primary navigation (order = display order). `key` matches <body data-page="…">.
   nav: [
+    { href: '/', label: 'Home', key: 'home' },
     { href: '/about.html', label: 'About', key: 'about' },
+    { href: '/projects.html', label: 'Research & Projects', key: 'projects' },
     { href: '/books.html', label: 'Books', key: 'books' },
-    { href: '/projects.html', label: 'Projects', key: 'projects' },
-    { href: '/timeline.html', label: 'Timeline', key: 'timeline' },
-    { href: '/cv.html', label: 'CV', key: 'cv' },
+    { href: '/writing.html', label: 'Writing', key: 'writing' },
     { href: '/contact.html', label: 'Contact', key: 'contact' },
   ],
 
-  // External profile links (footer).
+  // External profile links (footer, About, Contact).
   profiles: [
     { href: 'https://orcid.org/0000-0001-5462-8926', label: 'ORCID' },
     { href: 'https://national.academia.edu/MichaelBarros', label: 'Academia.edu' },
     { href: 'https://www.linkedin.com/in/michaelbarros22', label: 'LinkedIn' },
   ],
 
-  // Footer tagline links.
-  tagline: [
-    { href: '/about.html#dissertation', label: 'Research' },
+  email: 'mbarros@nu.edu',
+  cvPdf: '/assets/Barros_CV_2026.pdf',
+
+  // Footer page links, in display order, plus a direct CV download.
+  footerNav: [
+    { href: '/about.html', label: 'About' },
+    { href: '/projects.html', label: 'Research & Projects' },
     { href: '/books.html', label: 'Books' },
-    { href: '/projects.html', label: 'Projects' },
+    { href: '/writing.html', label: 'Writing' },
+    { href: '/contact.html', label: 'Contact' },
+    { href: '/assets/Barros_CV_2026.pdf', label: 'Download CV', blank: true },
   ],
 
-  // Projects — powers BOTH the homepage "Now" list and the Projects page cards.
-  //   shortTitle + now  -> homepage "What I'm working on right now"
-  //   title/org/desc/current/tags/fields -> Projects page cards & filters
+  // Research & Projects page. `type: 'organization'` entries render under
+  // "Initiatives"; `brief: true` entries render as a short linked card
+  // pointing back to their full write-up on the Books page.
   projects: [
     {
       id: 'dissertation',
-      shortTitle: 'Dissertation',
-      title: 'Dissertation: The Relationship Between Sensorimotor Dream Content and Waking Spiritual Experience',
+      title: 'Supernatural-Agent Concepts in Dreams',
       org: 'National University · Chair: Dr. Patrick McNamara',
-      fields: ['dissertation', 'csr'],
       status: 'Active',
-      desc: 'Examines whether simulation richness in dream content predicts religiosity and paranormal belief. Uses a grounded cognition framework — modeling dreaming as a high-intensity simulation process — and longitudinal dream data to test how variation in simulated experience relates to supernatural agent concepts and belief orientation.',
+      desc:
+        '<p>My doctoral research examines how supernatural agents and religious concepts are formed and represented during dreams. The project brings together grounded cognition, predictive processing, dream research, and the cognitive science of religion.</p>' +
+        '<p>Using longitudinal dream reports, psychological measures, and sleep data, the study investigates how sensory, emotional, social, and narrative features contribute to changes in religious and supernatural thought across sleep and waking experience.</p>' +
+        '<p>The broader goal is to develop an empirically grounded account of how religious concepts emerge from embodied and simulated experience rather than treating them solely as abstract beliefs.</p>',
       current: 'data analysis &amp; chapter drafting',
-      now: 'Recently submitted Chapter 3. Currently building out a new coding system and putting together the overall dissertation proposal — aiming to have that complete within the next few weeks.',
       tags: ['Grounded Cognition', 'Dreams', 'Supernatural Agents', 'Religiosity'],
     },
     {
       id: 'zelda-religion',
-      shortTitle: 'The Legend of Zelda &amp; Religion',
+      brief: true,
       title: 'The Legend of Zelda &amp; Religion',
-      org: 'Bloomsbury Academic · with Talbot Hook · due June 2026',
-      fields: ['media-religion'],
-      status: 'Active',
-      desc: 'An edited scholarly volume exploring how religion and the sacred emerge from within the structure and narrative of <em>The Legend of Zelda</em> series. Rather than mapping Zelda onto existing traditions, the volume investigates how religious meaning arises internally — through gameplay mechanics, symbolism, spatial design, and narrative. Timed to coincide with the Zelda film debut in March 2027.',
-      current: 'second drafts',
-      now: 'First round of drafts complete. Authors are now on their second round of revisions.',
-      tags: ['Zelda', 'Media Studies', 'Myth', 'Sacred Space'],
+      desc: 'An edited volume under contract examining how religion and the sacred emerge from the structure and narrative of <em>The Legend of Zelda</em> series.',
+      bookUrl: '/books.html#zelda',
     },
     {
       id: 'omega-point',
-      shortTitle: 'The Omega Point of Philip K. Dick',
+      brief: true,
       title: "Philip K. Dick's Omega Point",
-      org: 'Anti-Oedipus Press · Exegetics: PKD Studies',
-      fields: ['media-religion'],
-      status: 'Active',
-      desc: "A monograph examining Philip K. Dick's engagement with Pierre Teilhard de Chardin's theology — particularly the concept of the Omega Point — drawing primarily from Dick's <em>Exegesis</em>. The volume maps the extent of Dick's reading of Chardin and investigates how he makes use of and expands Chardin's eschatological framework.",
-      current: 'initial research',
-      now: "Still in the research phase. Working through transcriptions of PKD's unpublished notebooks and mapping his engagement with Teilhard de Chardin's eschatology.",
-      tags: ['PKD', 'Teilhard de Chardin', 'Eschatology', 'Exegesis'],
+      desc: "A monograph under contract examining the relationship between Philip K. Dick's religious thought and the theology of Pierre Teilhard de Chardin.",
+      bookUrl: '/books.html#omega-point',
     },
     {
       id: 'waypoint',
       type: 'organization',
-      shortTitle: 'Waypoint Institute',
       title: 'Waypoint Institute',
       org: 'waypoint.institute · Operations Director',
-      fields: ['education'],
       status: 'Active',
-      desc: 'A tuition-free Christian college education pursuing the Good, the True, and the Beautiful. Waypoint Institute offers a supporter-funded college pathway in Scripture, doctrine, culture, and mission — delivered through self-paced modules, guided checkpoints, and oral capstone examinations. Designed to make serious theological formation accessible without cost barriers.',
-      current: 'pre-launch testing',
-      now: 'Currently in the second round of beta testing.',
-      tags: ['Christian Education', 'Tuition-Free', 'Formation'],
+      desc: '<p>Waypoint Institute is a developing Christian educational initiative intended to provide serious theological and humanities education without tuition barriers. Its long-term aim is to make structured Christian learning available to students who may not have access to conventional academic institutions.</p>',
       url: 'https://waypoint.institute',
     },
     {
       id: 'religious-cognition-collab',
       type: 'organization',
-      shortTitle: 'Religious Cognition Collaborative',
       title: 'Religious Cognition Collaborative',
       org: 'religiouscognitioncollab.org · Managing Director',
-      fields: ['csr'],
       status: 'Active',
-      desc: 'A research organization advancing the interdisciplinary study of religious cognition — bringing together scholars across psychology, cognitive science, and religious studies to support empirical work on how the mind gives rise to religious and spiritual experience.',
-      current: 'operations &amp; research coordination',
-      now: 'Coordinating research and operations as Managing Director.',
-      tags: ['Cognitive Science of Religion', 'Research Network', 'Collaboration'],
+      desc: '<p>The Religious Cognition Collaborative supports interdisciplinary research on religion, cognition, neuroscience, psychology, and religious experience. Its work is intended to connect researchers across fields, encourage collaborative projects, and make research on religious cognition more accessible beyond narrow disciplinary boundaries.</p>',
       url: 'https://www.religiouscognitioncollab.org',
     },
   ],
