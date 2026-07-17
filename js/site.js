@@ -1,7 +1,7 @@
 /* Shared site behavior:
    - injects the header + footer from window.SITE_DATA (single source of truth)
-   - renders the homepage "Now" list and Projects cards from SITE_DATA.projects
-   - wires nav toggle, footer year, copy buttons, project filters, scroll reveal
+   - renders the Research & Projects page cards from SITE_DATA.projects
+   - wires nav toggle, copy buttons, scroll reveal
    Loaded with `defer`, so the DOM is parsed before this runs. */
 (() => {
   const D = window.SITE_DATA || {};
@@ -31,8 +31,11 @@
   function renderFooter() {
     const host = document.querySelector('[data-site-footer]');
     if (!host) return;
-    const tagline = (D.tagline || [])
-      .map((t) => `<a href="${t.href}">${t.label}</a>`)
+    const pages = (D.footerNav || [])
+      .map((t) => {
+        const attrs = t.blank ? ' target="_blank" rel="noopener"' : '';
+        return `<a href="${t.href}"${attrs}>${t.label}</a>`;
+      })
       .join(' · ');
     const profiles = (D.profiles || [])
       .map((p) => `<a href="${p.href}" target="_blank" rel="noopener">${p.label}</a>`)
@@ -42,86 +45,61 @@
       <div class="wrap">
         <p class="name">Michael C. Barros</p>
         <nav class="tag" aria-label="Explore">
-        ${tagline}
+        ${pages}
         </nav>
         <nav class="footer-links" aria-label="Profiles">
         ${profiles}
         </nav>
+        ${D.email ? `<p class="footer-email"><a href="mailto:${D.email}">${D.email}</a></p>` : ''}
         <p class="fine">© ${year} Michael C. Barros</p>
       </div>`;
   }
 
-  /* ---------- Homepage "Now" list ---------- */
-  function renderUpdates() {
-    const host = document.querySelector('[data-updates]');
-    if (!host || !D.projects) return;
-    host.innerHTML = D.projects
-      .map(
-        (p) => `
-        <li>
-          <span class="meta--caps meta">${p.shortTitle}</span>
-          <p>${p.now}</p>
-        </li>`
-      )
-      .join('');
-  }
-
-  /* ---------- Projects cards ---------- */
+  /* ---------- Research & Projects cards ---------- */
   function projectCard(p) {
+    if (p.brief) {
+      return `
+        <article class="project project--brief reveal" id="${p.id}">
+          <h2>${p.title}</h2>
+          <p class="desc">${p.desc}</p>
+          <a class="arrow-link" href="${p.bookUrl}">View book details</a>
+        </article>`;
+    }
     const heading = p.url
       ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
       : p.title;
-    const tags = p.tags.map((t) => `<span>${t}</span>`).join('\n            ');
+    const tags = p.tags
+      ? `<div class="tags">\n            ${p.tags.map((t) => `<span>${t}</span>`).join('\n            ')}\n          </div>`
+      : '';
+    const current = p.current ? `<p class="current"><strong>Current:</strong> ${p.current}</p>` : '';
     return `
-        <article class="project reveal" id="${p.id}" data-fields="${p.fields.join(' ')}">
+        <article class="project reveal" id="${p.id}">
           <div class="project__head">
             <h2>${heading}</h2>
             <span class="status status--active">${p.status}</span>
           </div>
           <p class="org">${p.org}</p>
-          <p class="desc">${p.desc}</p>
-          <p class="current"><strong>Current:</strong> ${p.current}</p>
-          <div class="tags">
-            ${tags}
-          </div>
+          <div class="desc">${p.desc}</div>
+          ${current}
+          ${tags}
         </article>`;
   }
 
   function renderProjects() {
     if (!D.projects) return;
-    // Top group (unlabeled): everything that isn't an organization.
+    const research = D.projects.filter((p) => p.type !== 'organization');
+    const initiatives = D.projects.filter((p) => p.type === 'organization');
+
     const work = document.querySelector('[data-projects]');
     if (work) {
-      work.innerHTML = D.projects
-        .filter((p) => p.type !== 'organization')
-        .map(projectCard)
-        .join('');
+      work.innerHTML = `<h2 class="group-head group-head--first reveal">Research</h2>${research.map(projectCard).join('')}`;
     }
-    // Bottom group: standing organizations, under an "Organizations" heading.
-    const orgHost = document.querySelector('[data-organizations]');
-    if (orgHost) {
-      const orgs = D.projects.filter((p) => p.type === 'organization');
-      orgHost.innerHTML = orgs.length
-        ? `<h2 class="group-head reveal">Organizations</h2>${orgs.map(projectCard).join('')}`
+    const initHost = document.querySelector('[data-initiatives]');
+    if (initHost) {
+      initHost.innerHTML = initiatives.length
+        ? `<h2 class="group-head reveal">Initiatives</h2>${initiatives.map(projectCard).join('')}`
         : '';
     }
-  }
-
-  /* ---------- Project filters ---------- */
-  function wireFilters() {
-    const chips = document.querySelectorAll('.chip[data-filter]');
-    const projects = document.querySelectorAll('.project[data-fields]');
-    if (!chips.length || !projects.length) return;
-    chips.forEach((chip) => {
-      chip.addEventListener('click', () => {
-        chips.forEach((c) => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
-        const f = chip.getAttribute('data-filter');
-        projects.forEach((p) => {
-          const show = f === 'all' || p.getAttribute('data-fields').split(' ').includes(f);
-          p.classList.toggle('is-hidden', !show);
-        });
-      });
-    });
   }
 
   /* ---------- Mobile nav toggle ---------- */
@@ -193,9 +171,7 @@
   /* ---------- Init (order matters: inject, then render, then wire) ---------- */
   renderHeader();
   renderFooter();
-  renderUpdates();
   renderProjects();
-  wireFilters();
   wireNavToggle();
   wireCopyButtons();
   wireReveal();

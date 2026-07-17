@@ -705,6 +705,10 @@ main { display: block; }
 
 .now-list p { margin: 0; font-size: 0.97rem; }
 
+.now-list .role { font-weight: 600; color: var(--ink); font-size: 1rem; margin: 0 0 0.15rem; }
+.now-list .org { font-style: italic; color: var(--ink-faint); font-size: 0.85rem; margin: 0 0 0.6rem; }
+.now-list p.desc { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
 /* ---------- Definition rows (education, roles, certs) ---------- */
 
 .row-list {
@@ -867,31 +871,6 @@ main { display: block; }
 
 /* ---------- Projects ---------- */
 
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 2rem 0 0.5rem;
-}
-
-.chip {
-  appearance: none;
-  border: 1px solid var(--rule-strong);
-  background: transparent;
-  color: var(--ink-soft);
-  font: 500 0.83rem var(--sans);
-  padding: 0.45rem 1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 160ms var(--ease);
-}
-.chip:hover { border-color: var(--ink-faint); color: var(--ink); }
-.chip[aria-pressed='true'] {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
-
 .project {
   padding: clamp(2rem, 4.5vw, 3rem) 0;
   border-top: 1px solid var(--rule);
@@ -924,6 +903,13 @@ main { display: block; }
 }
 .project .current strong { font-weight: 600; color: var(--accent-deep); }
 
+.project .desc p { margin: 0 0 0.9rem; }
+.project .desc p:last-child { margin-bottom: 0; }
+
+.project--brief { padding-bottom: clamp(1.6rem, 3.5vw, 2.25rem); }
+.project--brief h2 { font-size: clamp(1.2rem, 2vw, 1.4rem); }
+.project--brief .desc { margin: 0.5rem 0 0.8rem; }
+
 .project.is-hidden { display: none; }
 
 .group-head {
@@ -937,8 +923,11 @@ main { display: block; }
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-/* The heading is the group divider, so the first org card below it drops its own top rule. */
+/* The heading is the group divider, so the first card below it drops its own top rule. */
 .group-head + .project { border-top: none; padding-top: clamp(1.4rem, 3vw, 2rem); }
+
+/* First group on a page has no preceding content to divide from. */
+.group-head--first { margin-top: 0; padding-top: 0; border-top: none; }
 
 /* ---------- Timeline ---------- */
 
@@ -968,6 +957,7 @@ main { display: block; }
 .tl-dot--research { background: #2c7a7b; }
 .tl-dot--military { background: #44618c; }
 .tl-dot--publishing { background: #6d4a86; }
+.tl-dot--education { background: #9c3b53; }
 
 .tl-chart { position: relative; }
 
@@ -1030,6 +1020,7 @@ main { display: block; }
 .tl-bar--research { background: #2c7a7b; color: #2c7a7b; }
 .tl-bar--military { background: #44618c; color: #44618c; }
 .tl-bar--publishing { background: #6d4a86; color: #6d4a86; }
+.tl-bar--education { background: #9c3b53; color: #9c3b53; }
 
 .tl-bar .lbl {
   font: 500 0.74rem/1 var(--sans);
@@ -1202,86 +1193,6 @@ main { display: block; }
 
 .contact-card .cta-row { margin-top: 1.4rem; }
 
-/* ---------- CV ---------- */
-
-.cv-contact {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  margin-top: 0.5rem;
-}
-
-.cv-block { padding-top: clamp(2.2rem, 4.5vw, 3rem); }
-
-.cv-block > h2 {
-  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.cv-interests {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.74rem;
-  font-weight: 550;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.cv-interests span {
-  padding: 0.28rem 0.7rem;
-  background: var(--paper-deep);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-}
-
-.cv-entry { padding: 1.15rem 0; border-top: 1px solid var(--rule); }
-.cv-entry:first-child { border-top: none; padding-top: 0; }
-
-.cv-entry__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.3rem 2rem;
-  flex-wrap: wrap;
-}
-.cv-role { font-weight: 600; color: var(--ink); font-size: 1rem; margin: 0; }
-.cv-org { font-style: italic; color: var(--ink-faint); font-size: 0.9rem; margin: 0.15rem 0 0; max-width: none; }
-.cv-date {
-  font-size: 0.82rem;
-  color: var(--accent);
-  font-weight: 550;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.cv-bullets { margin: 0.7rem 0 0; padding-left: 1.1rem; }
-.cv-bullets li { font-size: 0.93rem; color: var(--ink-soft); margin-bottom: 0.35rem; }
-
-.cv-subhead {
-  font-family: var(--sans);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 1.7rem 0 0.8rem;
-}
-.cv-subhead:first-child { margin-top: 0; }
-
-.cv-cites { list-style: none; margin: 0; padding: 0; }
-.cv-cites li {
-  font-size: 0.93rem;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  padding-left: 1.5rem;
-  text-indent: -1.5rem;
-  margin-bottom: 0.85rem;
-  max-width: none;
-}
-.cv-cites li:last-child { margin-bottom: 0; }
-.cv-cites .note { color: var(--ink-faint); font-style: italic; }
-
 /* ---------- 404 ---------- */
 
 .notfound {
@@ -1356,6 +1267,14 @@ main { display: block; }
 .footer-links a { color: var(--ink-soft); }
 .footer-links a:hover { color: var(--accent-deep); }
 
+.footer-email {
+  max-width: none;
+  font-size: 0.86rem;
+  margin: 0 0 1rem;
+}
+.footer-email a { color: var(--ink-soft); }
+.footer-email a:hover { color: var(--accent-deep); }
+
 .site-footer .fine {
   max-width: none;
   font-size: 0.78rem;
@@ -1385,6 +1304,6 @@ main { display: block; }
 /* ---------- Print ---------- */
 
 @media print {
-  .site-header, .site-footer, .nav-toggle, .filter-bar { display: none; }
+  .site-header, .site-footer, .nav-toggle { display: none; }
   body { background: #fff; }
 }
