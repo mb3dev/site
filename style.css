@@ -1282,12 +1282,6 @@ main { display: block; }
   margin: 0;
 }
 
-/* ---------- Empty state (e.g. Writing page, no entries yet) ---------- */
-
-.empty-state { text-align: center; padding: clamp(3rem, 8vw, 5rem) 0; }
-.empty-state p { margin: 0 auto; max-width: 46ch; }
-.empty-state p + p { margin-top: 0.8rem; color: var(--ink-soft); }
-
 /* ---------- Reveal on scroll ---------- */
 
 .reveal {

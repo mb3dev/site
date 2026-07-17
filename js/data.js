@@ -7,7 +7,6 @@ window.SITE_DATA = {
     { href: '/about.html', label: 'About', key: 'about' },
     { href: '/projects.html', label: 'Research & Projects', key: 'projects' },
     { href: '/books.html', label: 'Books', key: 'books' },
-    { href: '/writing.html', label: 'Writing', key: 'writing' },
     { href: '/contact.html', label: 'Contact', key: 'contact' },
   ],
 
@@ -26,7 +25,6 @@ window.SITE_DATA = {
     { href: '/about.html', label: 'About' },
     { href: '/projects.html', label: 'Research & Projects' },
     { href: '/books.html', label: 'Books' },
-    { href: '/writing.html', label: 'Writing' },
     { href: '/contact.html', label: 'Contact' },
     { href: '/assets/Barros_CV_2026.pdf', label: 'Download CV', blank: true },
   ],
