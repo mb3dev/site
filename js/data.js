@@ -4,10 +4,10 @@ window.SITE_DATA = {
   // Primary navigation (order = display order). `key` matches <body data-page="…">.
   nav: [
     { href: '/', label: 'Home', key: 'home' },
-    { href: '/about.html', label: 'About', key: 'about' },
-    { href: '/projects.html', label: 'Research & Projects', key: 'projects' },
-    { href: '/books.html', label: 'Books', key: 'books' },
-    { href: '/contact.html', label: 'Contact', key: 'contact' },
+    { href: '/about', label: 'About', key: 'about' },
+    { href: '/projects', label: 'Research & Projects', key: 'projects' },
+    { href: '/books', label: 'Books', key: 'books' },
+    { href: '/contact', label: 'Contact', key: 'contact' },
   ],
 
   // External profile links (footer, About, Contact).
@@ -22,10 +22,10 @@ window.SITE_DATA = {
 
   // Footer page links, in display order, plus a direct CV download.
   footerNav: [
-    { href: '/about.html', label: 'About' },
-    { href: '/projects.html', label: 'Research & Projects' },
-    { href: '/books.html', label: 'Books' },
-    { href: '/contact.html', label: 'Contact' },
+    { href: '/about', label: 'About' },
+    { href: '/projects', label: 'Research & Projects' },
+    { href: '/books', label: 'Books' },
+    { href: '/contact', label: 'Contact' },
     { href: '/assets/Barros_CV_2026.pdf', label: 'Download CV', blank: true },
   ],
 
@@ -50,14 +50,14 @@ window.SITE_DATA = {
       brief: true,
       title: 'The Legend of Zelda &amp; Religion',
       desc: 'An edited volume under contract examining how religion and the sacred emerge from the structure and narrative of <em>The Legend of Zelda</em> series.',
-      bookUrl: '/books.html#zelda',
+      bookUrl: '/books#zelda',
     },
     {
       id: 'omega-point',
       brief: true,
       title: "Philip K. Dick's Omega Point",
       desc: "A monograph under contract examining the relationship between Philip K. Dick's religious thought and the theology of Pierre Teilhard de Chardin.",
-      bookUrl: '/books.html#omega-point',
+      bookUrl: '/books#omega-point',
     },
     {
       id: 'waypoint',
