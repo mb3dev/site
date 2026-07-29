@@ -1,10 +1,22 @@
 /* Shared site behavior:
    - injects the header + footer from window.SITE_DATA (single source of truth)
    - renders the Initiatives page cards and the homepage research-area tags
+   - normalizes browser and social-preview titles
    - wires nav toggle, copy buttons, scroll reveal
    Loaded with `defer`, so the DOM is parsed before this runs. */
 (() => {
   const D = window.SITE_DATA || {};
+
+  function normalizePageTitles() {
+    const page = document.body.dataset.page || 'home';
+    const names = { home: '', about: 'About', initiatives: 'Initiatives', books: 'Books', contact: 'Contact' };
+    const title = page === 'home' ? 'Michael C. Barros' : `${names[page] || page} | Michael C. Barros`;
+    document.title = title;
+    ['meta[property="og:title"]', 'meta[name="twitter:title"]'].forEach((selector) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('content', title);
+    });
+  }
 
   /* ---------- Header ---------- */
   function renderHeader() {
@@ -150,7 +162,7 @@
     }
   }
 
-  /* ---------- Init (order matters: inject, then render, then wire) ---------- */
+  normalizePageTitles();
   renderHeader();
   renderFooter();
   renderInitiatives();
