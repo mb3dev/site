@@ -50,13 +50,5 @@ window.SITE_DATA = {
       desc: '<p>A developing tuition-free Christian education initiative in theology and the humanities.</p>',
       url: 'https://waypoint.institute',
     },
-    {
-      id: 'religious-cognition-collab',
-      title: 'Religious Cognition Collaborative',
-      org: 'religiouscognitioncollab.org · Managing Director',
-      status: 'Active',
-      desc: '<p>A research network connecting scholars studying religion, cognition, and religious experience.</p>',
-      url: 'https://www.religiouscognitioncollab.org',
-    },
   ],
 };
