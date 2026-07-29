@@ -1,17 +1,20 @@
 /* Shared site behavior:
    - injects the header + footer from window.SITE_DATA (single source of truth)
    - renders the Initiatives page cards and the homepage research-area tags
-   - normalizes browser and social-preview titles
+   - keeps social-preview titles in step with each page title
    - wires nav toggle, copy buttons, scroll reveal
    Loaded with `defer`, so the DOM is parsed before this runs. */
 (() => {
   const D = window.SITE_DATA || {};
 
-  function normalizePageTitles() {
-    const page = document.body.dataset.page || 'home';
-    const names = { home: '', about: 'About', initiatives: 'Initiatives', books: 'Books', contact: 'Contact' };
-    const title = page === 'home' ? 'Michael C. Barros' : `${names[page] || page} | Michael C. Barros`;
-    document.title = title;
+  /* Keep the social-preview titles in step with the page title so the two
+     can't drift apart. Each page's own <title> is the source of truth —
+     deriving from it (rather than rebuilding from a page-key lookup) means
+     pages outside any hardcoded list, like the 404 and the redirect stubs,
+     keep their real titles instead of being overwritten. */
+  function syncSocialTitles() {
+    const title = document.title.trim();
+    if (!title) return;
     ['meta[property="og:title"]', 'meta[name="twitter:title"]'].forEach((selector) => {
       const el = document.querySelector(selector);
       if (el) el.setAttribute('content', title);
@@ -162,7 +165,7 @@
     }
   }
 
-  normalizePageTitles();
+  syncSocialTitles();
   renderHeader();
   renderFooter();
   renderInitiatives();
