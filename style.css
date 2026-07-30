@@ -951,7 +951,6 @@ main { display: block; }
 .tl-dot--research { background: #2c7a7b; }
 .tl-dot--military { background: #44618c; }
 .tl-dot--publishing { background: #6d4a86; }
-.tl-dot--education { background: #9c3b53; }
 
 .tl-chart { position: relative; }
 
@@ -1014,7 +1013,6 @@ main { display: block; }
 .tl-bar--research { background: #2c7a7b; color: #2c7a7b; }
 .tl-bar--military { background: #44618c; color: #44618c; }
 .tl-bar--publishing { background: #6d4a86; color: #6d4a86; }
-.tl-bar--education { background: #9c3b53; color: #9c3b53; }
 
 .tl-bar .lbl {
   font: 500 0.74rem/1 var(--sans);
