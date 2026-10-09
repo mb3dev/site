@@ -565,10 +565,59 @@ main { display: block; }
 
 .pub-feature__cover img {
   width: 100%;
-  border-radius: 4px;
   box-shadow:
     0 1px 2px rgba(27, 34, 48, 0.14),
     0 12px 32px -8px rgba(27, 34, 48, 0.28);
+}
+
+/* Covers read as hardcovers, not flat thumbnails: squarer corners on the
+   spine side, a soft hinge crease just inside the spine, and a gentle lift
+   on hover (every cover links out to order the book). The crease is drawn
+   in px so it stays the same physical width at any cover size. */
+.pub-feature__cover,
+.pub__cover a {
+  position: relative;
+  display: block;
+  border-radius: 2px 5px 5px 2px;
+  transition: transform 260ms var(--ease);
+}
+
+.pub-feature__cover img,
+.pub__cover img {
+  border-radius: inherit;
+  transition: box-shadow 260ms var(--ease);
+}
+
+.pub-feature__cover::after,
+.pub__cover a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.22) 0,
+    rgba(255, 255, 255, 0.2) 2px,
+    rgba(255, 255, 255, 0.06) 5px,
+    rgba(0, 0, 0, 0.16) 8px,
+    rgba(0, 0, 0, 0.04) 12px,
+    rgba(255, 255, 255, 0.05) 16px,
+    transparent 24px);
+}
+
+.pub-feature__cover:hover,
+.pub__cover a:hover { transform: translateY(-3px); }
+
+.pub-feature__cover:hover img {
+  box-shadow:
+    0 2px 4px rgba(27, 34, 48, 0.14),
+    0 22px 44px -12px rgba(27, 34, 48, 0.36);
+}
+
+.pub__cover a:hover img {
+  box-shadow:
+    0 2px 4px rgba(27, 34, 48, 0.14),
+    0 18px 38px -12px rgba(27, 34, 48, 0.34);
 }
 
 .pub-feature__body h3 {
@@ -778,10 +827,11 @@ main { display: block; }
   .pub--cover { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); align-items: start; }
 }
 
+.pub__cover a { max-width: 220px; } /* hug the image when the grid stacks */
+
 .pub__cover img {
   width: 100%;
   max-width: 220px;
-  border-radius: 4px;
   box-shadow:
     0 1px 2px rgba(27, 34, 48, 0.14),
     0 10px 28px -8px rgba(27, 34, 48, 0.25);
