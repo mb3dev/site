@@ -91,7 +91,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Whisper-quiet paper grain over the whole viewport — breaks up flat color fields */
+/* Whisper-quiet paper grain over the whole viewport — breaks up flat color fields.
+   Grain alpha = 0.2 × noise − 0.085: the negative offset cancels most of the
+   noise's average, so the overlay keeps its speckle but darkens the page by
+   ~2% rather than ~8% (which laid a grey veil over the cool paper, and over
+   every cover and photo). */
 body::after {
   content: '';
   position: fixed;
@@ -99,7 +103,7 @@ body::after {
   z-index: 999;
   pointer-events: none;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 -0.085'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media print {
