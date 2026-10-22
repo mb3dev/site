@@ -5,7 +5,6 @@ window.SITE_DATA = {
   nav: [
     { href: '/', label: 'Home', key: 'home' },
     { href: '/about', label: 'About', key: 'about' },
-    { href: '/initiatives', label: 'Initiatives', key: 'initiatives' },
     { href: '/books', label: 'Books', key: 'books' },
     { href: '/contact', label: 'Contact', key: 'contact' },
   ],
@@ -31,20 +30,8 @@ window.SITE_DATA = {
   // Footer page links, in display order.
   footerNav: [
     { href: '/about', label: 'About' },
-    { href: '/initiatives', label: 'Initiatives' },
     { href: '/books', label: 'Books' },
     { href: '/contact', label: 'Contact' },
   ],
 
-  // Initiatives page.
-  initiatives: [
-    {
-      id: 'waypoint',
-      title: 'Waypoint Institute',
-      org: 'waypoint.institute · Operations Director',
-      status: 'Active',
-      desc: '<p>A developing tuition-free Christian education initiative in theology and the humanities.</p>',
-      url: 'https://waypoint.institute',
-    },
-  ],
 };
