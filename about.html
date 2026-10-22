@@ -40,6 +40,30 @@
       color: var(--ink-faint);
       font-style: italic;
     }
+
+    .waypoint-section { padding-top: 0; scroll-margin-top: 6rem; }
+    .waypoint-feature { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid #cfc4ac; border-radius: 12px; box-shadow: 0 18px 45px -30px #1b223060; }
+    .waypoint-feature__identity { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; padding: clamp(1.75rem, 4vw, 3.5rem); background: #202c2a; color: #faf6ed; }
+    .waypoint-feature__label { font-size: .7rem; text-transform: uppercase; letter-spacing: .16em; color: #d3c59f; }
+    .waypoint-feature__name h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.045em; color: inherit; }
+    .waypoint-feature__name h2 span { display: block; margin-top: .45rem; font-size: .45em; letter-spacing: .015em; }
+    .waypoint-feature__name p { margin: 1.5rem 0 0; font-size: .85rem; color: #d3c59f; }
+    .waypoint-feature__link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid #ffffff35; color: #faf6ed; font-size: .9rem; }
+    .waypoint-feature__link:hover { color: #e4cd8f; }
+    .waypoint-feature__link > span[aria-hidden] { font-size: 1.5rem; }
+    .waypoint-feature__body { display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1.75rem, 4vw, 3rem); background: #f4efe3; color: #343b34; }
+    .waypoint-feature__fields { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 15rem; padding: 1.25rem 0 2rem; font-family: var(--serif); font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.2; }
+    .waypoint-feature__amp { font-style: italic; color: #8a6a26; font-size: 1.2em; }
+    .waypoint-feature__line { width: 3rem; height: 1px; background: #9e854c; margin: 1.3rem 0 1rem; }
+    .waypoint-feature__note { font-family: var(--sans); font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; text-align: center; }
+    .waypoint-feature__description { margin: 0 0 1.5rem; font-size: .9rem; line-height: 1.7; }
+    .waypoint-feature__credit { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; padding-top: 1rem; border-top: 1px solid #cfc4ac; font-size: .75rem; }
+    .waypoint-feature__credit > span:first-child { color: #626451; }
+    @media (max-width: 700px) {
+      .waypoint-feature { grid-template-columns: 1fr; }
+      .waypoint-feature__identity { gap: 2.25rem; }
+      .waypoint-feature__fields { min-height: 12rem; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -118,12 +142,34 @@
             <p class="org">OYD Live</p>
             <p class="desc">Business operations and event coordination.</p>
           </li>
-          <li id="waypoint">
-            <p class="role">Operations Director</p>
-            <p class="org"><a href="https://waypoint.institute" target="_blank" rel="noopener">Waypoint Institute</a></p>
-            <p class="desc">A developing tuition-free Christian education initiative in theology and the humanities.</p>
-          </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Waypoint project feature -->
+    <section class="section waypoint-section" id="waypoint" aria-labelledby="waypoint-title">
+      <div class="wrap">
+        <article class="waypoint-feature">
+          <div class="waypoint-feature__identity">
+            <span class="waypoint-feature__label">An initiative in development</span>
+            <div class="waypoint-feature__name">
+              <h2 id="waypoint-title">Waypoint<span>Institute</span></h2>
+              <p>Theology &amp; the humanities</p>
+            </div>
+            <a class="waypoint-feature__link" href="https://waypoint.institute" target="_blank" rel="noopener">Explore Waypoint <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14" /></svg><span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+          <div class="waypoint-feature__body">
+            <div class="waypoint-feature__fields" aria-hidden="true">
+              <span>Theology</span>
+              <span class="waypoint-feature__amp">&amp;</span>
+              <span>Humanities</span>
+              <div class="waypoint-feature__line"></div>
+              <span class="waypoint-feature__note">Christian education · Tuition-free</span>
+            </div>
+            <p class="waypoint-feature__description">A developing tuition-free Christian education initiative in theology and the humanities.</p>
+            <div class="waypoint-feature__credit"><span>My role</span><span>Operations Director</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
