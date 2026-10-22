@@ -18,26 +18,22 @@ window.SITE_DATA = {
   ],
 
   email: 'mbarros@nu.edu',
-  cvPdf: '/assets/Barros_CV_2026.pdf',
 
-  // Homepage "Research Areas" tags — kept in sync with the CV's Research
-  // Interests line.
+  // Homepage "Research Areas" tags — research interests.
   researchInterests: [
     'Cognitive Science of Religion',
     'Dreams',
     'Theology of Culture',
     'Religion and Culture',
-    'Grounded Cognition',
     'Media Theory',
   ],
 
-  // Footer page links, in display order, plus a direct CV download.
+  // Footer page links, in display order.
   footerNav: [
     { href: '/about', label: 'About' },
     { href: '/initiatives', label: 'Initiatives' },
     { href: '/books', label: 'Books' },
     { href: '/contact', label: 'Contact' },
-    { href: '/assets/Barros_CV_2026.pdf', label: 'Download CV', blank: true },
   ],
 
   // Initiatives page.
