@@ -50,15 +50,10 @@
     .waypoint-feature__description { max-width: 60ch; margin: 0 0 1.5rem; color: #0a2a59; font-size: .95rem; line-height: 1.75; }
     .waypoint-feature__button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; padding: .85rem 1.15rem; border: 1px solid #0a2a59; border-radius: 5px; background: #0a2a59; color: #fff; font-size: .9rem; font-weight: 600; text-decoration: none; }
     .waypoint-feature__button:hover { background: #e0c16c; color: #0a2a59; text-decoration: none; }
-    .waypoint-feature__preview { margin: 0 clamp(1rem, 3vw, 2.5rem) clamp(1rem, 3vw, 2.5rem); overflow: hidden; border: 1px solid #0a2a5930; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px -12px #0a2a5940; }
-    .waypoint-feature__browser { display: flex; align-items: center; gap: .35rem; padding: .65rem .85rem; background: #e9eef5; color: #485970; }
-    .waypoint-feature__browser i { width: 7px; height: 7px; border-radius: 50%; background: #a2b2c9; }
-    .waypoint-feature__browser span { margin-left: .65rem; font-size: .7rem; }
-    .waypoint-feature__preview img { display: block; width: 100%; height: auto; }
     @media (max-width: 600px) {
-      .waypoint-feature__intro { grid-template-columns: minmax(0, 1fr); }
+      .waypoint-feature__intro { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
       .waypoint-feature__logo { width: calc(180px - 1.3rem); }
-      .waypoint-feature__button { width: 100%; }
+      .waypoint-feature__button { max-width: 100%; }
     }
   </style>
   <script type="application/ld+json">
@@ -154,10 +149,6 @@
               <a class="waypoint-feature__button" href="https://waypoint.institute" target="_blank" rel="noopener noreferrer">Visit Waypoint Institute<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14" /></svg><span class="sr-only"> (opens in a new tab)</span></a>
             </div>
           </div>
-          <figure class="waypoint-feature__preview">
-            <div class="waypoint-feature__browser" aria-hidden="true"><i></i><i></i><i></i><span>waypoint.institute</span></div>
-            <img src="./assets/waypoint-home.png" alt="Waypoint Institute homepage: blue ocean waves behind the message ‘to all the nations’ and links to apply or browse courses." width="1024" height="594" loading="lazy" />
-          </figure>
         </article>
       </div>
     </section>
