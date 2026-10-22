@@ -123,22 +123,15 @@
     });
   }
 
-  /* ---------- Copy-to-clipboard buttons ---------- */
-  function wireCopyButtons() {
-    document.querySelectorAll('.copy-btn[data-copy]').forEach((btn) => {
-      const original = btn.textContent;
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(btn.getAttribute('data-copy'));
-          btn.textContent = 'Copied';
-          btn.classList.add('copied');
-          setTimeout(() => {
-            btn.textContent = original;
-            btn.classList.remove('copied');
-          }, 1600);
-        } catch {
-          /* clipboard unavailable — leave button as-is */
-        }
+  /* ---------- Book review disclosure ---------- */
+  function wireReviewToggles() {
+    document.querySelectorAll('.review-toggle[aria-controls]').forEach((button) => {
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      if (!panel) return;
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        panel.hidden = expanded;
       });
     });
   }
@@ -171,6 +164,6 @@
   renderInitiatives();
   renderResearchInterests();
   wireNavToggle();
-  wireCopyButtons();
+  wireReviewToggles();
   wireReveal();
 })();

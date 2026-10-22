@@ -860,34 +860,28 @@ main { display: block; }
 
 .pub .desc p { font-size: 0.98rem; }
 
-.citation {
-  margin-top: 1.2rem;
-  padding: 1rem 1.2rem;
-  background: var(--paper-deep);
-  border-left: 2px solid var(--rule-strong);
-  border-radius: 0 6px 6px 0;
-}
-
-.citation p {
-  margin: 0 0 0.6rem;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  max-width: none;
-}
-
-.copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+.review-toggle {
   background: none;
-  border: none;
-  padding: 0;
-  font: 500 0.8rem var(--sans);
-  color: var(--accent);
+  border: 1px solid var(--rule-strong);
+  border-radius: 5px;
+  padding: .6rem .85rem;
+  font: 500 .85rem var(--sans);
+  color: var(--accent-deep);
   cursor: pointer;
+  text-align: left;
 }
-.copy-btn:hover { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 0.2em; }
-.copy-btn.copied { color: var(--ok); }
+.review-toggle:hover { background: var(--accent-wash); }
+.book-review[hidden] { display: none; }
+.book-review blockquote {
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--paper-deep);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink-soft);
+}
+.book-review blockquote p { font-family: var(--serif); font-size: 1rem; line-height: 1.75; }
+.book-review blockquote footer { font-size: .85rem; line-height: 1.6; }
 
 /* ---------- Projects ---------- */
 
